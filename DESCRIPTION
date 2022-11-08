@@ -1,30 +1,11 @@
 Package: oncoAnalysis
 Type: Package
-Title: Compare DNA Sequences and Check if Mutated
+Title: What the Package Does (Title Case)
 Version: 0.1.0
-Authors@R: person("Xinyi", "Xu", 
-                  email = "tiffanyandjojo.xu@mail.utoronto.ca", 
-                  role = c("aut", "cre"))
-Maintainer: Xu Xinyi <tiffanyandjojo.xu@mail.utoronto.ca>
-Description: Compare the two FASTA DNA files, check if the gene of 
-    interest is mutated.
-    Determine the type of mutation(if exists). 
-    Plot the number of the type of mutations.
+Author: Who wrote it
+Maintainer: The package maintainer <yourself@somewhere.net>
+Description: More about what it does (maybe more than one line)
+    Use four spaces when indenting paragraphs within the Description.
+License: What license is it under?
 Encoding: UTF-8
 LazyData: true
-Depends: R (>= 4.0.0)
-biocViews:
-Remotes: 
-Imports: 
-    ggplot2,
-License: MIT + file LICENSE
-Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.1
-Suggests: 
-    testthat,
-    knitr,
-    rmarkdown,
-    RTCGA.rnaseq
-VignetteBuilder: knitr
-URL: https://github.com/xuxiny17/oncoAnalysis
-BugReports: https://github.com/xuxiny17/oncoAnalysis/issues
