@@ -1,0 +1,18 @@
+Package: oncoAnalysis
+Type: Package
+Title: Compare DNA Sequences and Check if Mutated
+Version: 0.1.0
+Authors@R: person("Xinyi", "Xu", 
+                  email = "tiffanyandjojo.xu@mail.utoronto.ca", 
+                  role = c("aut", "cre"))
+Maintainer: Xu Xinyi <tiffanyandjojo.xu@mail.utoronto.ca>
+Description: Compare the two FASTA DNA files, check if the gene of 
+    interest is mutated.
+    Determine the type of mutation(if exists). 
+    Plot the number of the type of mutations.
+License: MIT + file LICENSE
+Depends: R (>= 4.0.0)
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.2.1
+Roxygen: list(markdown = TRUE)
