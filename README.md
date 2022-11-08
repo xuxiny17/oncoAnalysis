@@ -10,10 +10,12 @@ The goal of oncoAnalysis is to …
 
 ## Installation
 
-You can install the development version of oncoAnalysis like so:
+You can install the development version of oncoAnalysis from
+[GitHub](https://github.com/) with:
 
 ``` r
-# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
+# install.packages("devtools")
+devtools::install_github("xuxiny17/oncoAnalysis")
 ```
 
 ## Example
