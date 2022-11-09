@@ -1,0 +1,43 @@
+#' Check if Mutation Exists along with its numbers
+#'
+#' A function that checks if there is mutation occurred
+#'
+#' @param datahea A vector containing DNA sequence(healthy)
+#' @param datamut A vector containing DNA sequence(suspect mutated)
+#'
+#' @return Returns the number of mutations, .
+#' \itemize{
+#'   \item The total number of mutations.
+#'   \item The number of Base A mutated.
+#'   \item The number of Base T mutated.
+#'   \item The number of Base C mutated.
+#'   \item The number of Base G mutated.
+#' }
+#'
+#' @examples
+#' # Example 1:
+#' # Using sampleseq and samplemutseq dataset available with package
+#' sampleseq1 <- sampleseq[1:(length(sampleseq))]
+#' samplemutseq1 <- samplemutseq[1:(length(samplemutseq))]
+#'
+#' # Check the number of mutations.
+#' mutCheckerResults <- mutChecker(
+#'                           sampleseq1,
+#'                           samplemutseq1)
+#'
+#' @references
+#'Charif, D. and Lobry, J.R. (2007). SeqinR 1.0-2: a contributed package to the
+#'R project for statistical computing devoted to biological sequences retrieval
+#'and analysis
+#'\href{https://cran.r-project.org/web/packages/seqinr/index.html}{Link}
+#'
+#'Coghlan, Avril. "Little book of R for Bioinformatics."
+#'Cambridge, UK: Welcome Trust Sanger Institute (2011).
+#'\href{https://a-little-book-of-r-for-bioinformatics.readthedocs.io/en/latest/index.html}{Link}.
+#'
+#' @export
+#' @import seqinr
+mutChecker <- function(datahea,
+                       datamut) {
+
+}
