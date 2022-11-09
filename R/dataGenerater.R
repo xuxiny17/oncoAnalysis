@@ -7,6 +7,7 @@
 #'
 #' @export
 #'
+
 dataGenerater <- function(data, nummut) {
   return()
 }
