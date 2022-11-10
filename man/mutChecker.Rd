@@ -12,13 +12,18 @@ mutChecker(datahea, datamut)
 \item{datamut}{A vector containing DNA sequence(suspect mutated)}
 }
 \value{
-Returns the number of mutations, .
+Returns the number of mutations.
 \itemize{
 \item The total number of mutations.
 \item The number of Base A mutated.
 \item The number of Base T mutated.
 \item The number of Base C mutated.
 \item The number of Base G mutated.
+\item The position of each mutation.
+\item The matrix containing mutation details. (Column names represent the
+base in original sequence, Role names represent the base in
+mutated sequence. Used to check for example how many base A has mutated
+into base T.)
 }
 }
 \description{
@@ -27,6 +32,7 @@ A function that checks if there is mutation occurred
 \examples{
 # Example 1:
 # Using sampleseq and samplemutseq dataset available with package
+# Read in data
 sampleseq1 <- sampleseq[1:(length(sampleseq))]
 samplemutseq1 <- samplemutseq[1:(length(samplemutseq))]
 
@@ -45,4 +51,14 @@ and analysis
 Coghlan, Avril. "Little book of R for Bioinformatics."
 Cambridge, UK: Welcome Trust Sanger Institute (2011).
 \href{https://a-little-book-of-r-for-bioinformatics.readthedocs.io/en/latest/index.html}{Link}.
+
+“R Compare Vectors & Find Differences (5 Examples):
+Identify Similarities.” Statistics Globe, 18 Mar. 2022.
+\href{https://statisticsglobe.com/compare-vectors-and-find-differences-in-r}{Link}.
+
+“R For Loop (with Examples).” DataMentor, 8 Oct. 2018.
+\href{https://www.datamentor.io/r-programming/for-loop/}{Link}.
+
+“How to Create Tables in R?” GeeksforGeeks, 27 Dec. 2021.
+\href{https://www.geeksforgeeks.org/how-to-create-tables-in-r/}{Link}.
 }

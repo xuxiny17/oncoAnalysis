@@ -2,4 +2,5 @@
 
 export(dataGenerater)
 export(mutChecker)
+export(mutTable)
 import(seqinr)
