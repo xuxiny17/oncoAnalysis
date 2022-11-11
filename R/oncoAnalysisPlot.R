@@ -75,7 +75,7 @@ mutPlot <- function(mutvals, barcolor) {
 #' @param datahea A vector containing DNA sequence(healthy)
 #' @param datamut A vector containing DNA sequence(suspect mutated)
 #'
-#' @return Returns a plot of mutation details.
+#' @return Returns a plot of Sequence comparison.
 #'
 #' @examples
 #' # Using sampleseq and samplemutseq dataset available with package
