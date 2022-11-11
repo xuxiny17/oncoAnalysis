@@ -136,6 +136,5 @@ mutCompPlot <- function(datahea, datamut) {
   return(plotCompMut)
 }
 
-
 # [END]
 
