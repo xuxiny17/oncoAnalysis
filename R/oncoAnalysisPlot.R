@@ -55,14 +55,14 @@ mutPlot <- function(mutvals, barcolor) {
 
   # plotting the Bar Chart
   plotMut <- ggplot2::ggplot(PlotingData, aes(names, data)) +
-    geom_col(fill=barcolor) +
+    ggplot2::geom_col(fill=barcolor) +
     ggplot2::labs(title = "Plot of Number of Mutated Bases",
                   x = "Base", y = "Num of Base mutated") +
-    ggplot2::theme(axis.line =  ggplot2::element_line(colour = "#006994"),
-                   plot.title = element_text(size = rel(2.6)),
-                   axis.ticks = element_line(linewidth = 1)) +
-    geom_text(aes(label = data), size = 3, hjust = 0.5, vjust = 3,
-              color = "#228B22")
+    ggplot2::theme(axis.line =  ggplot2::element_line(colour = "#9FD3BF"),
+                   plot.title = ggplot2::element_text(size = rel(2)),
+                   axis.ticks = ggplot2::element_line(linewidth = 1)) +
+    ggplot2::geom_text(aes(label = data), size = 3, hjust = 0.5, vjust = 3,
+              color = "#014421")
 
   return(plotMut)
 }
@@ -120,14 +120,17 @@ mutCompPlot <- function(datahea, datamut) {
   mut2 <- data.frame(c("A_Mut", "C_Mut", "G_Mut", "T_Mut"), mut1$Frequency)
   colnames(healthy2) <- c("Base", "Frequency")
   colnames(mut2) <- c("Base", "Frequency")
-  combdata <- rbind(healthy2, mut2)
+  combdata <- rbind(healthy2, mut2) # Create the plotting data set
 
 
   # plotting the Bar Chart
-  plotCompMut <- ggplot(ppp, aes(Base, Frequency, fill = Base)) + geom_col() +
+  plotCompMut <- ggplot2::ggplot(ppp, aes(Base, Frequency, fill = Base)) +
+    ggplot2::geom_col() +
     ggplot2::labs(title = "Plot of the Base Numbers",
                   x = "Base", y = "Frequency") +
-    geom_text(aes(label = Frequency), size = 3, hjust = 0.5, vjust = 3,
+    ggplot2::theme(plot.title = ggplot2::element_text(size = rel(2.6)),
+                   axis.ticks = ggplot2::element_line(linewidth = 1)) +
+    ggplot2::geom_text(aes(label = Frequency), size = 3, hjust = 0.5, vjust = 3,
               color = "#333333")
 
   return(plotCompMut)
