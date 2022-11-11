@@ -12,7 +12,7 @@ mutChecker(datahea, datamut)
 \item{datamut}{A vector containing DNA sequence(suspect mutated)}
 }
 \value{
-Returns the number of mutations.
+Returns a list containing mutation details.
 \itemize{
 \item The total number of mutations.
 \item The number of Base A mutated.
@@ -33,6 +33,8 @@ A function that checks if there is mutation occurred
 # Example 1:
 # Using sampleseq and samplemutseq dataset available with package
 # Read in data
+load("./data/sampleseq.rda")
+load("./data/samplemutseq.rda")
 sampleseq1 <- sampleseq[1:(length(sampleseq))]
 samplemutseq1 <- samplemutseq[1:(length(samplemutseq))]
 

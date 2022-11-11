@@ -17,4 +17,5 @@ LazyData: true
 RoxygenNote: 7.2.1
 Roxygen: list(markdown = TRUE)
 Imports: 
+    ggplot2 (>= 3.4.0),
     seqinr (>= 4.2-16)

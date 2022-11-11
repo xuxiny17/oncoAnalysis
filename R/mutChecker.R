@@ -5,7 +5,7 @@
 #' @param datahea A vector containing DNA sequence(healthy)
 #' @param datamut A vector containing DNA sequence(suspect mutated)
 #'
-#' @return Returns the number of mutations.
+#' @return Returns a list containing mutation details.
 #' \itemize{
 #'   \item The total number of mutations.
 #'   \item The number of Base A mutated.
@@ -23,6 +23,8 @@
 #' # Example 1:
 #' # Using sampleseq and samplemutseq dataset available with package
 #' # Read in data
+#' load("./data/sampleseq.rda")
+#' load("./data/samplemutseq.rda")
 #' sampleseq1 <- sampleseq[1:(length(sampleseq))]
 #' samplemutseq1 <- samplemutseq[1:(length(samplemutseq))]
 #'
@@ -52,7 +54,6 @@
 #'\href{https://www.geeksforgeeks.org/how-to-create-tables-in-r/}{Link}.
 #'
 #' @export
-#' @import seqinr
 mutChecker <- function(datahea,
                        datamut) {
   # Check if the two vectors are identical.
