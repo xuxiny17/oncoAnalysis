@@ -126,7 +126,9 @@ mutCompPlot <- function(datahea, datamut) {
   # plotting the Bar Chart
   plotCompMut <- ggplot(ppp, aes(Base, Frequency, fill = Base)) + geom_col() +
     ggplot2::labs(title = "Plot of the Base Numbers",
-                  x = "Base", y = "Frequency")
+                  x = "Base", y = "Frequency") +
+    geom_text(aes(label = Frequency), size = 3, hjust = 0.5, vjust = 3,
+              color = "#333333")
 
   return(plotCompMut)
 }
