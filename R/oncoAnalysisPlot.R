@@ -34,6 +34,10 @@
 #'“Bar Charts - geom_bar.” - geom_bar • ggplot2
 #'\href{https://ggplot2.tidyverse.org/reference/geom_bar.html}{Link}
 #'
+#'Wickham, Hadley, Winston Chang, and Maintainer Hadley Wickham.
+#'"Package ‘ggplot2’." Create elegant data visualisations using the grammar
+#'of graphics. Version 2.1 (2016): 1-189.
+#'
 #' @export
 #' @importFrom ggplot2 ggplot
 mutPlot <- function(mutvals, barcolor) {
@@ -105,6 +109,10 @@ mutPlot <- function(mutvals, barcolor) {
 #'AndrewAndrew 1322 silver badges33 bronze badges, and jtr13jtr13
 #'1. “Ggplot geom_col Legend Not Showing.” Stack Overflow, 1 Mar. 1965.
 #'\href{https://stackoverflow.com/questions/48134472/ggplot-geom-col-legend-not-showing}{Link}
+#'
+#'#'Wickham, Hadley, Winston Chang, and Maintainer Hadley Wickham.
+#'"Package ‘ggplot2’." Create elegant data visualisations using the grammar
+#'of graphics. Version 2.1 (2016): 1-189.
 #'
 #' @export
 #' @importFrom ggplot2 ggplot
