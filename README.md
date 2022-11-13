@@ -44,22 +44,22 @@ browseVignettes(“oncoAnalysis”)
 
 ## Contributions
 
-<br> <br> The author of the package is Xu Xinyi. The *mutChecker*
-function takes in DNA sequence and generate detailed mutaion
-information. The code for *mutChecker* function uses the loop creating
-and vector comparing ideas illustrated online (See *References* section
-for detiled documentation). The code for *mutTable* function uses the
-table creating idea illustrated online to create a two way table.(See
-*References* section for detiled documentation). The *mutPlot* and
-*mutCompPlot* function make use of the `ggplot2` R package, and the
-plotting details imitated the tutorials online along with the technique
-of adding optional arguments to the functions (See *References* section
-for detiled documentation).
+The author of the package is Xu Xinyi. The *mutChecker* function takes
+in DNA sequence and generate detailed mutaion information. The code for
+*mutChecker* function uses the loop creating and vector comparing ideas
+illustrated online (See *References* section for detiled documentation).
+The code for *mutTable* function uses the table creating idea
+illustrated online to create a two way table.(See *References* section
+for detiled documentation). The *mutPlot* and *mutCompPlot* function
+make use of the `ggplot2` R package, and the plotting details imitated
+the tutorials online along with the technique of adding optional
+arguments to the functions (See *References* section for detiled
+documentation).
 
 ## References
 
-<br> <br> Holtz, Yan. “Basic Histogram with GGPLOT2.” – The R Graph
-Gallery. <https://r-graph-gallery.com/220-basic-ggplot2-histogram.html>
+Holtz, Yan. “Basic Histogram with GGPLOT2.” – The R Graph Gallery.
+<https://r-graph-gallery.com/220-basic-ggplot2-histogram.html>
 
 Modify Components of a Theme - Theme.” - Theme • ggplot2
 <https://ggplot2.tidyverse.org/reference/theme.html>
