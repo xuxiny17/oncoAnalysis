@@ -32,6 +32,7 @@ A function that checks if there is mutation occurred
 \examples{
 # Example 1:
 # Using sampleseq and samplemutseq dataset available with package
+\dontrun{
 # Read in data
 load("./data/sampleseq.rda")
 load("./data/samplemutseq.rda")
@@ -42,6 +43,7 @@ samplemutseq1 <- samplemutseq[1:(length(samplemutseq))]
 mutCheckerResults <- mutChecker(
                           sampleseq1,
                           samplemutseq1)
+}
 
 }
 \references{

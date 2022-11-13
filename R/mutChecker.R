@@ -22,6 +22,7 @@
 #' @examples
 #' # Example 1:
 #' # Using sampleseq and samplemutseq dataset available with package
+#' \dontrun{
 #' # Read in data
 #' load("./data/sampleseq.rda")
 #' load("./data/samplemutseq.rda")
@@ -32,6 +33,7 @@
 #' mutCheckerResults <- mutChecker(
 #'                           sampleseq1,
 #'                           samplemutseq1)
+#' }
 #'
 #' @references
 #'Charif, D. and Lobry, J.R. (2007). SeqinR 1.0-2: a contributed package to the

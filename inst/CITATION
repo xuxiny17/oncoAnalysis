@@ -1,0 +1,12 @@
+citHeader("To cite oncoAnalysis in publications use:")
+
+citEntry(
+  entry    = "Unpublished",
+  title    = "oncoAnalysis: An R Package For BCB410H Course Work",
+  author   = "Xu Xinyi",
+  year     = 2022,
+  note     = "Unpublished",
+  textVersion =
+  paste("Xinyi, X. (2022) oncoAnalysis: An R Package For BCB410H Course Work.
+        Unpublished. URL https://github.com/xuxiny17/oncoAnalysis.")
+)

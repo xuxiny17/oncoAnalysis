@@ -19,3 +19,9 @@ Roxygen: list(markdown = TRUE)
 Imports: 
     ggplot2 (>= 3.4.0),
     seqinr (>= 4.2-16)
+Suggests: 
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0)
+VignetteBuilder: knitr
+Config/testthat/edition: 3

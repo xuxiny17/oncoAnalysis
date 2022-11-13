@@ -4,15 +4,23 @@
 \alias{mutPlot}
 \title{Plot The Mutation Results}
 \usage{
-mutPlot(mutvals, barcolor)
+mutPlot(mutvals, barcolor, title_name, x_name, y_name)
 }
 \arguments{
-\item{infValues}{A list of mutation detail values of class "mutChecker"
+\item{mutvals}{A list of mutation detail values of class "mutChecker"
 addressing the total number of mutations, the number of Base A mutated,
 the number of Base T mutated, the number of Base C mutated,
 the number of Base G mutated, the position of each mutation, and
-the matrix containing mutation details, respective.
-@param barcolor An optional parameter which determines the bar color.}
+the matrix containing mutation details, respective.}
+
+\item{barcolor}{An optional parameter which determines the bar color.}
+
+\item{title_name}{An optional parameter which determines the title name of
+the plot.}
+
+\item{x_name}{An optional parameter which determines x axis label.}
+
+\item{y_name}{An optional parameter which determines y axis label.}
 }
 \value{
 Returns a plot of mutation details.
@@ -21,6 +29,7 @@ Returns a plot of mutation details.
 A function that plots the mutation result details.
 }
 \examples{
+\dontrun{
 # Using sampleseq and samplemutseq dataset available with package
 # Read in data
 load("./data/sampleseq.rda")
@@ -32,6 +41,7 @@ samplemutseq1 <- samplemutseq[1:(length(samplemutseq))]
 mutCheckerResults <- mutChecker(sampleseq1,samplemutseq1)
 
 mutPlot(mutvals = mutCheckerResults)
+}
 
 }
 \references{
@@ -43,4 +53,8 @@ Holtz, Yan. “Basic Histogram with GGPLOT2.” – The R Graph Gallery.
 
 “Bar Charts - geom_bar.” - geom_bar • ggplot2
 \href{https://ggplot2.tidyverse.org/reference/geom_bar.html}{Link}
+
+Wickham, Hadley, Winston Chang, and Maintainer Hadley Wickham.
+"Package ‘ggplot2’." Create elegant data visualisations using the grammar
+of graphics. Version 2.1 (2016): 1-189.
 }

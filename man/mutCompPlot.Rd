@@ -4,21 +4,29 @@
 \alias{mutCompPlot}
 \title{Visualize the Base number comparison between Healthy and Mutated Sequence.}
 \usage{
-mutCompPlot(datahea, datamut)
+mutCompPlot(datahea, datamut, title_name, x_name, y_name)
 }
 \arguments{
 \item{datahea}{A vector containing DNA sequence(healthy)}
 
 \item{datamut}{A vector containing DNA sequence(suspect mutated)}
+
+\item{title_name}{An optional parameter which determines the title name of.
+the plot}
+
+\item{x_name}{An optional parameter which determines x axis label.}
+
+\item{y_name}{An optional parameter which determines y axis label.}
 }
 \value{
-Returns a plot of mutation details.
+Returns a plot of Sequence comparison.
 }
 \description{
 A function that visualize the base number comparison between healthy
 and mutated Sequence.
 }
 \examples{
+\dontrun{
 # Using sampleseq and samplemutseq dataset available with package
 # Read in data
 load("./data/sampleseq.rda")
@@ -28,6 +36,7 @@ samplemutseq1 <- samplemutseq[1:(length(samplemutseq))]
 
 # Compare the base numbers in Sequence.
 mutCompPlot(sampleseq1, samplemutseq1)
+}
 
 }
 \references{
@@ -49,4 +58,8 @@ AndrewAndrew 1322 silver badges33 bronze badges, and jtr13jtr13
 \item “Ggplot geom_col Legend Not Showing.” Stack Overflow, 1 Mar. 1965.
 \href{https://stackoverflow.com/questions/48134472/ggplot-geom-col-legend-not-showing}{Link}
 }
+
+#'Wickham, Hadley, Winston Chang, and Maintainer Hadley Wickham.
+"Package ‘ggplot2’." Create elegant data visualisations using the grammar
+of graphics. Version 2.1 (2016): 1-189.
 }
