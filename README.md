@@ -3,7 +3,7 @@
 
 # oncoAnalysis
 
-An R Package For BCB410H Course work.
+Compare DNA Sequences and Check if Mutated.
 
 <!-- badges: start -->
 <!-- https://shields.io/category/license -->
@@ -11,7 +11,18 @@ An R Package For BCB410H Course work.
 
 ## Description
 
-The goal of oncoAnalysis is to …
+The goal of `oncoAnalysis` package is to develop functions that check if
+there is mutations between healthy input DNA FASTA file and
+mutated(suspected) DNA FASTA file. The package contains the main
+components: DESCRIPTION, NAMESPACE, man subdirectory, R
+subdirectory(where functions are storing), LICENSE, README, folder
+vignettes, tests, data and inst. The package is build for BCB410H
+(Applied Bioinformatics) course work. The package is currently under
+construction and the current version contains two analysis functions and
+two plotting functions. The `oncoAnalysis` package was developed using
+`R version 4.2.1 (2022-06-23)`,
+`Platform: x86_64-apple-darwin17.0 (64-bit)` and
+`Running under: macOS Ventura 13.0.1`.
 
 ## Installation
 
@@ -20,10 +31,16 @@ You can install the development version of oncoAnalysis from
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("xuxiny17/oncoAnalysis")
+devtools::install_github("xuxiny17/oncoAnalysis", build_vignettes = TRUE)
+library("oncoAnalysis")
 ```
 
+To run the shinyApp: Under construction
+
 ## Overview
+
+ls(“package:oncoAnalysis”) data(package = “oncoAnalysis”)
+browseVignettes(“oncoAnalysis”)
 
 ## Contributions
 
@@ -87,42 +104,6 @@ Massachusetts: O’Reilly Media. <https://r-pkgs.org/>
 SimonGSimonG4, et al. “‘Correct’ Way to Specifiy Optional Arguments in R
 Functions.” Stack Overflow, 1 Apr. 1962,
 <https://stackoverflow.com/questions/28370249/correct-way-to-specifiy-optional-arguments-in-r-functions>
-
-## Example
-
-This is a basic example which shows you how to solve a common problem:
-
-``` r
-library(oncoAnalysis)
-## basic example code
-```
-
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
-
-``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
-```
-
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this. You could also
-use GitHub Actions to re-render `README.Rmd` every time you push. An
-example workflow can be found here:
-<https://github.com/r-lib/actions/tree/v1/examples>.
-
-You can also embed plots, for example:
-
-<img src="man/figures/README-pressure-1.png" width="100%" />
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
 
 ## Acknowledgements:
 

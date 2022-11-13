@@ -59,7 +59,12 @@ AndrewAndrew 1322 silver badges33 bronze badges, and jtr13jtr13
 \href{https://stackoverflow.com/questions/48134472/ggplot-geom-col-legend-not-showing}{Link}
 }
 
-#'Wickham, Hadley, Winston Chang, and Maintainer Hadley Wickham.
+Wickham, Hadley, Winston Chang, and Maintainer Hadley Wickham.
 "Package ‘ggplot2’." Create elegant data visualisations using the grammar
 of graphics. Version 2.1 (2016): 1-189.
+
+SimonGSimonG4, et al.
+“‘Correct’ Way to Specifiy Optional Arguments in R Functions.”
+Stack Overflow, 1 Apr. 1962
+\href{https://stackoverflow.com/questions/28370249/correct-way-to-specifiy-optional-arguments-in-r-functions}{Link}
 }
