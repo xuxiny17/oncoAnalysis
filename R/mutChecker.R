@@ -79,6 +79,15 @@
 #' @importFrom seqinr read.fasta
 mutChecker <- function(datahea,
                        datamut) {
+  # Check if input is valid
+  if (typeof(datahea) != "character") {
+    print("The Type of Healthy Sequence is invalid, please use character type.")
+    exit(1)
+  } else if (typeof(datamut) != "character") {
+    print("The Type of Mutated Sequence is invalid, please use character type.")
+    exit(1)
+  }
+
   # Check if the two vectors are identical.
   if (identical(datahea, datamut)) {
     print("The Two DNA Sequences Are Identical.")
@@ -238,6 +247,12 @@ mutChecker <- function(datahea,
 #' @export
 #' @importFrom seqinr read.fasta
 mutTable <- function(mutatmatrix){
+  # Check if input is valid
+  if (typeof(mutatmatrix) != "double") {
+    print("The type of the input Matrix is invalid, please use type double.")
+    exit(1)
+  }
+
   muttable <- as.table(mutatmatrix)
   muttable
 }

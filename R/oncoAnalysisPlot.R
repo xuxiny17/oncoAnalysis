@@ -81,6 +81,11 @@
 #' @importFrom ggplot2 ggplot
 #' @importFrom seqinr read.fasta
 mutPlot <- function(mutvals, barcolor, title_name, x_name, y_name) {
+  # Check if the input is valid
+  if (typeof(mutvals) != "list" && length(mutvals) != 7) {
+    print("The input of Checker result is invalid.")
+    exit(1)
+  }
 
   # Setup the default values
   if (missing(barcolor)) {
@@ -208,6 +213,14 @@ mutPlot <- function(mutvals, barcolor, title_name, x_name, y_name) {
 #' @importFrom ggplot2 ggplot
 #' @importFrom seqinr read.fasta
 mutCompPlot <- function(datahea, datamut, title_name, x_name, y_name) {
+  # Check if input is valid
+  if (typeof(datahea) != "character") {
+    print("The Type of Healthy Sequence is invalid, please use character type.")
+    exit(1)
+  } else if (typeof(datamut) != "character") {
+    print("The Type of Mutated Sequence is invalid, please use character type.")
+    exit(1)
+  }
 
   # Setup the default values
   if (missing(title_name)) {

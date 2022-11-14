@@ -55,7 +55,8 @@ test_that("mutPlot error upon invalid user input", {
   mutCheckerResults <- mutChecker(sampleseq1, samplemutseq1)
 
   # Input incorrect input
-  expect_error(mutationplot <- mutPlot(randominput)) # Number
+  expect_error(mutationplot <- mutPlot(12345)) # Number
+  expect_error(mutationplot <- mutPlot("AAAA")) # String
 })
 
 test_that("mutCompPlot output", {
@@ -107,11 +108,9 @@ test_that("mutCompPlot error upon invalid user input", {
   sampleseq1 <- sampleseq$Sample[1:(length(sampleseq$Sample))]
   samplemutseq1 <- samplemutseq$Samplemut[1:(length(samplemutseq$Samplemut))]
 
-  # Check the number of mutations.
-  mutCheckerResults <- mutChecker(sampleseq1, samplemutseq1)
-
   # Incorrect Random Input
-  expect_error(table_mut <- mutTable("AAA"))
+  expect_error(mutcomplot <- mutCompPlot(1234, samplemutseq1))
+  expect_error(mutcomplot <- mutCompPlot(sampleseq1, 1234))
 })
 
 
