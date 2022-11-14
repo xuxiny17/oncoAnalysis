@@ -45,14 +45,16 @@ data(package = "oncoAnalysis")
 browseVignettes("oncoAnalysis") 
 ```
 
-`oncoAnalysis` currently contains 4 functions. The *mutChecker* function
-(analysis function) takes in two DNA sequence and check if the suspected
-mutated sequence is different from the healthy version, if so, output
-the mutation details. In details, the output contains the number of
-total mutations, the number of Base A, T C, G mutated receptively, the
-positions that the mutation occured, and a mutation detailed matrix
-containing information which illustrates which base was mutated to which
-in mutated sequence compared to the healthy version.
+`oncoAnalysis` currently contains 4 functions.
+
+The *mutChecker* function (analysis function) takes in two DNA sequence
+and check if the suspected mutated sequence is different from the
+healthy version, if so, output the mutation details. In details, the
+output contains the number of total mutations, the number of Base A, T
+C, G mutated receptively, the positions that the mutation occured, and a
+mutation detailed matrix containing information which illustrates which
+base was mutated to which in mutated sequence compared to the healthy
+version.
 
 The *mutTable* (analysis function) generates a simple table which
 illustrates the matrix output by the *mutChecker* function. The column
@@ -88,7 +90,8 @@ section for detailed documentation). The *mutPlot* and *mutCompPlot*
 function make use of the `ggplot2` R package, and the plotting details
 imitated the tutorials online along with the technique of adding
 optional arguments to the functions (See *References* section for
-detailed documentation).
+detailed documentation). To read in FASTA files, the package would
+depend on `seqinr` R package.
 
 ## References
 
