@@ -17,9 +17,16 @@ mutated(suspected) DNA FASTA file. The package contains the main
 components: DESCRIPTION, NAMESPACE, man subdirectory, R
 subdirectory(where functions are storing), LICENSE, README, folder
 vignettes, tests, data and inst. The package is build for BCB410H
-(Applied Bioinformatics) course work. The package is currently under
-construction and the current version contains two analysis functions and
-two plotting functions. The `oncoAnalysis` package was developed using
+(Applied Bioinformatics) course work.
+
+The package is currently under construction and the current version
+contains two analysis functions and two plotting functions. The two
+analysis functions are able to compare the contents of two DNA FASTA
+files and obtain the mutation details which current work seem to be lack
+of. The plotting functions visualize the results obtained from the
+analysis functions and display them in a clearer way.
+
+The `oncoAnalysis` package was developed using
 `R version 4.2.1 (2022-06-23)`,
 `Platform: x86_64-apple-darwin17.0 (64-bit)` and
 `Running under: macOS Ventura 13.0.1`.
@@ -141,6 +148,14 @@ Massachusetts: O’Reilly Media. <https://r-pkgs.org/>
 SimonGSimonG4, et al. “‘Correct’ Way to Specifiy Optional Arguments in R
 Functions.” Stack Overflow, 1 Apr. 1962,
 <https://stackoverflow.com/questions/28370249/correct-way-to-specifiy-optional-arguments-in-r-functions>
+
+Silva, Anjali. “Anjalisilva/TestingPackage: A Simple R Package
+Illustrating Components of an R Package: 2019-2022 BCB410H - Applied
+Bioinformatics, University of Toronto, Canada.” GitHub,
+<https://github.com/anjalisilva/TestingPackage>.
+
+The creation of the package followed the contents taught in BCB410
+lectures.
 
 ## Acknowledgements:
 
