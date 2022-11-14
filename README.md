@@ -26,6 +26,9 @@ files and obtain the mutation details which current work seem to be lack
 of. The plotting functions visualize the results obtained from the
 analysis functions and display them in a clearer way.
 
+The current package does not handle false input, the function which
+imports and processes data would be implemented in the next version.
+
 The `oncoAnalysis` package was developed using
 `R version 4.2.1 (2022-06-23)`,
 `Platform: x86_64-apple-darwin17.0 (64-bit)` and
@@ -90,15 +93,16 @@ details. The current overview of the package is illustrated below.
 The author of the package is Xu Xinyi. The *mutChecker* function takes
 in DNA sequence and generate detailed mutation information. The code for
 *mutChecker* function uses the loop creating and vector comparing ideas
-illustrated online (See *References* section for detailed
-documentation). The code for *mutTable* function uses the table creating
-idea illustrated online to create a two way table.(See *References*
-section for detailed documentation). The *mutPlot* and *mutCompPlot*
-function make use of the `ggplot2` R package, and the plotting details
-imitated the tutorials online along with the technique of adding
-optional arguments to the functions (See *References* section for
-detailed documentation). To read in FASTA files, the package would
-depend on `seqinr` R package.
+illustrated online (See *References* section for detailed documentation,
+no direct codes taken). The code for *mutTable* function uses the table
+creating ideas illustrated online to create a two way table.(See
+*References* section for detailed documentation, no direct codes taken).
+
+The *mutPlot* and *mutCompPlot* function make use of the `ggplot2` R
+package, and the plotting details imitated the tutorials online along
+with the technique of adding optional arguments to the functions (See
+*References* section for detailed documentation, no direct codes taken).
+To read in FASTA files, the package would depend on `seqinr` R package.
 
 ## References
 
@@ -153,6 +157,13 @@ Silva, Anjali. “Anjalisilva/TestingPackage: A Simple R Package
 Illustrating Components of an R Package: 2019-2022 BCB410H - Applied
 Bioinformatics, University of Toronto, Canada.” GitHub,
 <https://github.com/anjalisilva/TestingPackage>.
+
+R Core Team (2022). R: A language and environment for statistical
+computing. R Foundation for Statistical Computing, Vienna, Austria. URL
+<https://www.R-project.org/>.
+
+H. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag
+New York, 2016.
 
 The creation of the package followed the contents taught in BCB410
 lectures.
