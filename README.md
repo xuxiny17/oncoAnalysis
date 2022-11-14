@@ -39,8 +39,11 @@ To run the shinyApp: Under construction
 
 ## Overview
 
-ls(“package:oncoAnalysis”) data(package = “oncoAnalysis”)
-browseVignettes(“oncoAnalysis”)
+``` r
+ls("package:oncoAnalysis") 
+data(package = "oncoAnalysis")
+browseVignettes("oncoAnalysis") 
+```
 
 `oncoAnalysis` currently contains 4 functions. The *mutChecker* function
 (analysis function) takes in two DNA sequence and check if the suspected

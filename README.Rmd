@@ -38,9 +38,11 @@ To run the shinyApp: Under construction
 
 ## Overview
 
-ls("package:oncoAnalysis") \newline
-data(package = "oncoAnalysis") \newline
-browseVignettes("oncoAnalysis") \newline
+``` r
+ls("package:oncoAnalysis") 
+data(package = "oncoAnalysis")
+browseVignettes("oncoAnalysis") 
+```
 
 `oncoAnalysis` currently contains 4 functions. The *mutChecker* function (analysis function) takes in two DNA sequence and check if the suspected mutated sequence is different from the healthy version, if so, output the mutation details. In details, the output contains the number of total mutations, the number of Base A, T C, G mutated receptively, the positions that the mutation occured, and a mutation detailed matrix containing information which illustrates which base was mutated to which in mutated sequence compared to the healthy version. 
 
