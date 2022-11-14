@@ -38,14 +38,25 @@ To run the shinyApp: Under construction
 
 ## Overview
 
+ls("package:oncoAnalysis") \newline
+data(package = "oncoAnalysis") \newline
+browseVignettes("oncoAnalysis") \newline
 
-ls("package:oncoAnalysis")
-data(package = "oncoAnalysis")
-browseVignettes("oncoAnalysis")
+`oncoAnalysis` currently contains 4 functions. The *mutChecker* function (analysis function) takes in two DNA sequence and check if the suspected mutated sequence is different from the healthy version, if so, output the mutation details. In details, the output contains the number of total mutations, the number of Base A, T C, G mutated receptively, the positions that the mutation occured, and a mutation detailed matrix containing information which illustrates which base was mutated to which in mutated sequence compared to the healthy version. 
+
+The *mutTable* (analysis function) generates a simple table which illustrates the matrix output by the *mutChecker* function. The column names represent the base in original sequence, Role names represent the base in mutated sequence. Used to check for example how many base A has mutated into base T. (In future updates, the table is expected to be made clearer.)
+
+*mutPlot* is a plotting function that plots the number of each base mutated comparing to the healthy sequence.
+
+The *mutCompPlot* is a plotting function that visualizes the base number comparison between healthy and mutated Sequence. Both of the plotting functions could take in optional arguments that specifies the title, name, x labels and y labels, if not given, the functions would use default values. 
+
+The package also contains two DNA sequencing data sets, called samplemutseq.rda and sampleseq.rda. Refer to package vignettes for more details. The current overview of the package is illustrated below. 
+
+![](./inst/extdata/Xinyi_X_A1.png)
 
 ## Contributions
 
-The author of the package is Xu Xinyi. The *mutChecker* function takes in DNA sequence and generate detailed mutaion information. The code for *mutChecker* function uses the loop creating and vector comparing ideas illustrated online (See *References* section for detiled documentation). The code for *mutTable* function uses the table creating idea illustrated online to create a two way table.(See *References* section for detiled documentation). The *mutPlot* and *mutCompPlot* function make use of the `ggplot2` R package, and the plotting details imitated the tutorials online along with the technique of adding optional arguments to the functions (See *References* section for detiled documentation).
+The author of the package is Xu Xinyi. The *mutChecker* function takes in DNA sequence and generate detailed mutation information. The code for *mutChecker* function uses the loop creating and vector comparing ideas illustrated online (See *References* section for detailed documentation). The code for *mutTable* function uses the table creating idea illustrated online to create a two way table.(See *References* section for detailed documentation). The *mutPlot* and *mutCompPlot* function make use of the `ggplot2` R package, and the plotting details imitated the tutorials online along with the technique of adding optional arguments to the functions (See *References* section for detailed documentation).
 
 ## References
 
@@ -93,8 +104,8 @@ SimonGSimonG4, et al. “‘Correct’ Way to Specifiy Optional Arguments in R F
 Stack Overflow, 1 Apr. 1962, https://stackoverflow.com/questions/28370249/correct-way-to-specifiy-optional-arguments-in-r-functions
 
 ## Acknowledgements: 
-This package was developed as part of an assessment for 2022 BCB410H: Applied Bioinformatics course at the University of Toronto, Toronto, CANADA. oncoAnalysis welcomes issues, enhancement requests, and other contributions. To submit an issue, use the GitHub issues.
 
+This package was developed as part of an assessment for 2022 BCB410H: Applied Bioinformatics course at the University of Toronto, Toronto, CANADA. oncoAnalysis welcomes issues, enhancement requests, and other contributions. To submit an issue, use the GitHub issues.
 <br>
 <br>
 The package tree structure is provided below.
@@ -111,8 +122,9 @@ The package tree structure is provided below.
     |- samplemutseq.rda
   |- inst
     CITATION
+    |- extdata
+      |- Xinyi_X_A1.png
   |- man
-    |- dataGenerater.Rd
     |- mutChecker.Rd
     |- mutCompPlot.Rd
     |- mutPlot.Rd
@@ -121,10 +133,7 @@ The package tree structure is provided below.
     |- sampleseq.Rd
   |- R
     |- data.R
-    |- dataGenerater.R
-    |- dataProcessor.R
     |- mutChecker.R
-    |- oncoAnalysisCalculation.R
     |- oncoAnalysisPlot.R
   |- vignettes
     |- Introduction_oncoAnalysis.Rmd

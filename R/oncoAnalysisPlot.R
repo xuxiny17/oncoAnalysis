@@ -172,7 +172,7 @@ mutCompPlot <- function(datahea, datamut, title_name, x_name, y_name) {
   colnames(healthy2) <- c("Base", "Frequency")
   colnames(mut2) <- c("Base", "Frequency")
   combdata <- rbind(healthy2, mut2) # Create the plotting data set
-
+  colnames(mut2) <- c("Base", "Frequency")
 
   # plotting the Bar Chart
   plotCompMut <- ggplot2::ggplot(combdata, ggplot2::aes(Base, Frequency,
