@@ -190,6 +190,8 @@ package tree structure is provided below.
     CITATION
     |- extdata
       |- Xinyi_X_A1.png
+      |- sampleseq.fasta
+      |- samplemutseq.fasta
   |- man
     |- mutChecker.Rd
     |- mutCompPlot.Rd
@@ -203,6 +205,7 @@ package tree structure is provided below.
     |- oncoAnalysisPlot.R
   |- vignettes
     |- Introduction_oncoAnalysis.Rmd
+    |- Xinyi_X_A1.png
   |- tests
     |- testthat.R
     |- testthat
