@@ -16,8 +16,9 @@
 #' @return Returns a plot of mutation details.
 #'
 #' @examples
-#' \dontrun{
+#' # Example 1:
 #' # Using sampleseq and samplemutseq dataset available with package
+#' \dontrun{
 #' # Read in data
 #' load("./data/sampleseq.rda")
 #' load("./data/samplemutseq.rda")
@@ -25,10 +26,32 @@
 #' samplemutseq1 <- samplemutseq[1:(length(samplemutseq))]
 #'
 #' # Check the number of mutations.
-#' mutCheckerResults <- mutChecker(sampleseq1,samplemutseq1)
+#' mutCheckerResults <- mutChecker(sampleseq1, samplemutseq1)
 #'
 #' mutPlot(mutvals = mutCheckerResults)
 #' }
+#'
+#' # Example 2:
+#' # Import data in sample raw FASTA format
+#' # Note: to read FASTA files, it requires installation of seqinr R package
+#' library("seqinr")
+#' inputhea <- system.file("extdata", "sample.fasta", package = "oncoAnalysis")
+#' inputmut <- system.file("extdata", "samplemut.fasta", package = "oncoAnalysis")
+#'
+#' # Read using read.fasta()
+#' sampleseq <- seqinr::read.fasta(file = inputhea)
+#' samplemutseq <- seqinr::read.fasta(file = inputmut)
+#'
+#' # Process and store data
+#' sampleseq1 <- sampleseq$Sample[1:(length(sampleseq$Sample))]
+#' samplemutseq1 <- samplemutseq$Samplemut[1:(length(samplemutseq$Samplemut))]
+#'
+#' # Check the number of mutations.
+#' mutCheckerResults <- mutChecker(
+#'                           sampleseq1,
+#'                           samplemutseq1)
+#'
+#' mutPlot(mutvals = mutCheckerResults)
 #'
 #'@references
 #'Holtz, Yan. “Basic Histogram with GGPLOT2.” – The R Graph Gallery.
@@ -49,8 +72,14 @@
 #'Stack Overflow, 1 Apr. 1962
 #'\href{https://stackoverflow.com/questions/28370249/correct-way-to-specifiy-optional-arguments-in-r-functions}{Link}
 #'
+#'Charif, D. and Lobry, J.R. (2007). SeqinR 1.0-2: a contributed package to the
+#'R project for statistical computing devoted to biological sequences retrieval
+#'and analysis
+#'\href{https://cran.r-project.org/web/packages/seqinr/index.html}{Link}
+#'
 #' @export
 #' @importFrom ggplot2 ggplot
+#' @importFrom seqinr read.fasta
 mutPlot <- function(mutvals, barcolor, title_name, x_name, y_name) {
 
   # Setup the default values
@@ -107,8 +136,9 @@ mutPlot <- function(mutvals, barcolor, title_name, x_name, y_name) {
 #' @return Returns a plot of Sequence comparison.
 #'
 #' @examples
-#' \dontrun{
+#' # Example 1:
 #' # Using sampleseq and samplemutseq dataset available with package
+#' \dontrun{
 #' # Read in data
 #' load("./data/sampleseq.rda")
 #' load("./data/samplemutseq.rda")
@@ -118,6 +148,29 @@ mutPlot <- function(mutvals, barcolor, title_name, x_name, y_name) {
 #' # Compare the base numbers in Sequence.
 #' mutCompPlot(sampleseq1, samplemutseq1)
 #' }
+#'
+#' # Example 2:
+#' # Import data in sample raw FASTA format
+#' # Note: to read FASTA files, it requires installation of seqinr R package
+#' library("seqinr")
+#' inputhea <- system.file("extdata", "sample.fasta", package = "oncoAnalysis")
+#' inputmut <- system.file("extdata", "samplemut.fasta", package = "oncoAnalysis")
+#'
+#' # Read using read.fasta()
+#' sampleseq <- seqinr::read.fasta(file = inputhea)
+#' samplemutseq <- seqinr::read.fasta(file = inputmut)
+#'
+#' # Process and store data
+#' sampleseq1 <- sampleseq$Sample[1:(length(sampleseq$Sample))]
+#' samplemutseq1 <- samplemutseq$Samplemut[1:(length(samplemutseq$Samplemut))]
+#'
+#' # Check the number of mutations.
+#' mutCheckerResults <- mutChecker(
+#'                           sampleseq1,
+#'                           samplemutseq1)
+#'
+#' # Compare the base numbers in Sequence.
+#' mutCompPlot(sampleseq1, samplemutseq1)
 #'
 #'@references
 #'Holtz, Yan. “Basic Histogram with GGPLOT2.” – The R Graph Gallery.
@@ -146,8 +199,14 @@ mutPlot <- function(mutvals, barcolor, title_name, x_name, y_name) {
 #'Stack Overflow, 1 Apr. 1962
 #'\href{https://stackoverflow.com/questions/28370249/correct-way-to-specifiy-optional-arguments-in-r-functions}{Link}
 #'
+#'Charif, D. and Lobry, J.R. (2007). SeqinR 1.0-2: a contributed package to the
+#'R project for statistical computing devoted to biological sequences retrieval
+#'and analysis
+#'\href{https://cran.r-project.org/web/packages/seqinr/index.html}{Link}
+#'
 #' @export
 #' @importFrom ggplot2 ggplot
+#' @importFrom seqinr read.fasta
 mutCompPlot <- function(datahea, datamut, title_name, x_name, y_name) {
 
   # Setup the default values

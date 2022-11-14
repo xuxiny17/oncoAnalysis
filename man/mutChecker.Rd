@@ -45,6 +45,26 @@ mutCheckerResults <- mutChecker(
                           samplemutseq1)
 }
 
+# Example 2:
+# Import data in sample raw FASTA format
+# Note: to read FASTA files, it requires installation of seqinr R package
+library("seqinr")
+inputhea <- system.file("extdata", "sample.fasta", package = "oncoAnalysis")
+inputmut <- system.file("extdata", "samplemut.fasta", package = "oncoAnalysis")
+
+# Read using read.fasta()
+sampleseq <- seqinr::read.fasta(file = inputhea)
+samplemutseq <- seqinr::read.fasta(file = inputmut)
+
+# Process and store data
+sampleseq1 <- sampleseq$Sample[1:(length(sampleseq$Sample))]
+samplemutseq1 <- samplemutseq$Samplemut[1:(length(samplemutseq$Samplemut))]
+
+# Check the number of mutations.
+mutCheckerResults <- mutChecker(
+                          sampleseq1,
+                          samplemutseq1)
+
 }
 \references{
 Charif, D. and Lobry, J.R. (2007). SeqinR 1.0-2: a contributed package to the
