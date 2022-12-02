@@ -85,4 +85,8 @@ Identify Similarities.” Statistics Globe, 18 Mar. 2022.
 
 “How to Create Tables in R?” GeeksforGeeks, 27 Dec. 2021.
 \href{https://www.geeksforgeeks.org/how-to-create-tables-in-r/}{Link}.
+
+user2588829, et al.
+“Break/Exit Script.” Stack Overflow, 24 July 2013,
+\href{https://stackoverflow.com/questions/17837289/break-exit-script}{Link}.
 }

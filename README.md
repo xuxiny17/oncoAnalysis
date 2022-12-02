@@ -41,6 +41,7 @@ You can install the development version of oncoAnalysis from
 
 ``` r
 # install.packages("devtools")
+library("devtools")
 devtools::install_github("xuxiny17/oncoAnalysis", build_vignettes = TRUE)
 library("oncoAnalysis")
 ```
@@ -55,7 +56,12 @@ data(package = "oncoAnalysis")
 browseVignettes("oncoAnalysis") 
 ```
 
-`oncoAnalysis` currently contains 4 functions.
+`oncoAnalysis` currently contains 5 functions.
+
+The *fastaReader* function takes in fasta files and check if the input
+DNA sequence is valid (contain characters other than ATCGatcg or not),
+if valid, it returns the sequence contained, otherwise the function
+terminates and produce error message.
 
 The *mutChecker* function (analysis function) takes in two DNA sequence
 and check if the suspected mutated sequence is different from the
@@ -186,12 +192,18 @@ package tree structure is provided below.
   |- data
     |- sampleseq.rda
     |- samplemutseq.rda
+    |- samplefalseseq.rda
+    |- sampleInsseq.rda
+    |- sampleDelseq.rda
   |- inst
     CITATION
     |- extdata
       |- Xinyi_X_A1.png
       |- sampleseq.fasta
       |- samplemutseq.fasta
+      |- samplefalseseq.fasta
+      |- sampleDel.fasta
+      |- sample.fasta
   |- man
     |- mutChecker.Rd
     |- mutCompPlot.Rd
@@ -199,10 +211,15 @@ package tree structure is provided below.
     |- mutTable.Rd
     |- samplemutseq.Rd
     |- sampleseq.Rd
+    |- sampleInsseq.Rd
+    |- fastaReader.Rd
+    |- sampleDelseq.Rd
+    |- samplefalseseq.Rd
   |- R
     |- data.R
     |- mutChecker.R
     |- oncoAnalysisPlot.R
+    |- dataImporter.R
   |- vignettes
     |- Introduction_oncoAnalysis.Rmd
     |- Xinyi_X_A1.png
@@ -211,4 +228,5 @@ package tree structure is provided below.
     |- testthat
       |- test-mutChecker.R
       |- test-oncoAnalysisPlot.R
+      |- test-dataImporter.R
 ```

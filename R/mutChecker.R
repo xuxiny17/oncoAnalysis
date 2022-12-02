@@ -75,17 +75,19 @@
 #'“How to Create Tables in R?” GeeksforGeeks, 27 Dec. 2021.
 #'\href{https://www.geeksforgeeks.org/how-to-create-tables-in-r/}{Link}.
 #'
+#'user2588829, et al.
+#'“Break/Exit Script.” Stack Overflow, 24 July 2013,
+#'\href{https://stackoverflow.com/questions/17837289/break-exit-script}{Link}.
+#'
 #' @export
 #' @importFrom seqinr read.fasta
 mutChecker <- function(datahea,
                        datamut) {
   # Check if input is valid
   if (typeof(datahea) != "character") {
-    print("The Type of Healthy Sequence is invalid, please use character type.")
-    exit(1)
+    stop("The Type of Healthy Sequence is invalid, please use character type.")
   } else if (typeof(datamut) != "character") {
-    print("The Type of Mutated Sequence is invalid, please use character type.")
-    exit(1)
+    stop("The Type of Mutated Sequence is invalid, please use character type.")
   }
 
   # Check if the two vectors are identical.
@@ -113,6 +115,81 @@ mutChecker <- function(datahea,
   g_to_t <- 0
   g_to_c <- 0
   pos <- c()
+
+  if (length(datahea) > length(datamut)) {
+    # Print the type and the number of base deletion
+    print("There is Base Deletion")
+    differ <- length(datahea) - length(datamut)
+    print(sprintf("The deletion happened at least: %d times", differ))
+  } else if (length(datahea) < length(datamut)) {
+    # Print the type and the number of base insertion.
+    print("There is Base Insertion.")
+    print(sprintf("The insertion happened at least: %d times",
+                  (length(datamut) - length(datahea))))
+  } else if (length(datahea) == length(datamut)) {
+    # Use while loop to track the sequence
+    while (tracker <= length(datahea)) {
+      # Check if the bases are identical one by one
+      if (datahea[tracker] != datamut[tracker]) {
+        if (datahea[tracker] == 'a') {
+          a <- a + 1 # Calculate the number of mutated base A in original sequence
+          if (datamut[tracker] == 't') {
+            a_to_t <- a_to_t + 1 # Check mutated to which base
+          } else if (datamut[tracker] == 'c') {
+            a_to_c <- a_to_c + 1
+          } else if (datamut[tracker] == 'g') {
+            a_to_g <- a_to_g + 1
+          }
+        } else if (datahea[tracker] == 't'){
+          t <- t + 1 # Calculate the number of mutated base T in original sequence
+          if (datamut[tracker] == 'a') {
+            t_to_a <- t_to_a + 1
+          } else if (datamut[tracker] == 'c') {
+            t_to_c <- t_to_c + 1
+          } else if (datamut[tracker] == 'g') {
+            t_to_g <- t_to_g + 1
+          }
+        } else if (datahea[tracker] == 'c'){
+          c <- c + 1 # Calculate the number of mutated base C in original sequence
+          if (datamut[tracker] == 'a') {
+            c_to_a <- c_to_a + 1
+          } else if (datamut[tracker] == 't') {
+            c_to_t <- c_to_t + 1
+          } else if (datamut[tracker] == 'g') {
+            c_to_g <- c_to_g + 1
+          }
+        } else if (datahea[tracker] == 'g'){
+          g <- g + 1 # Calculate the number of mutated base G in original sequence
+          if (datamut[tracker] == 'a') {
+            g_to_a <- g_to_a + 1
+          } else if (datamut[tracker] == 't') {
+            g_to_t <- g_to_t + 1
+          } else if (datamut[tracker] == 'c') {
+            g_to_c <- g_to_c + 1
+          }
+        }
+        pos <- append(pos, tracker) # Document the position the mutation occurred
+        count <- count + 1
+      }
+      tracker <- tracker + 1
+    }
+
+    mutmatrix <- matrix(c(0, a_to_t, a_to_c, a_to_g, t_to_a, 0, t_to_c, t_to_g,
+                          c_to_a, c_to_t, 0, c_to_g, g_to_a, g_to_t, g_to_c, 0
+    ), ncol=4, byrow=TRUE)
+
+    colnames(mutmatrix) = c('A','T','C','G')
+    rownames(mutmatrix) <- c('A','T','C','G')
+
+    # Store the results.
+    results <- list(TotalMutNum = count,
+                    NumofAmut = a,
+                    NumofTmut = t,
+                    NumofCmut = c,
+                    NumofGmut = g,
+                    Mutposition = pos,
+                    MutMatrix = mutmatrix)
+  }
 
   # Use while loop to track the
   while (tracker <= length(datahea)) {
@@ -244,17 +321,20 @@ mutChecker <- function(datahea,
 #'and analysis
 #'\href{https://cran.r-project.org/web/packages/seqinr/index.html}{Link}
 #'
+#'user2588829, et al.
+#'“Break/Exit Script.” Stack Overflow, 24 July 2013,
+#'\href{https://stackoverflow.com/questions/17837289/break-exit-script}{Link}.
+#'
 #' @export
 #' @importFrom seqinr read.fasta
 mutTable <- function(mutatmatrix){
   # Check if input is valid
   if (typeof(mutatmatrix) != "double") {
-    print("The type of the input Matrix is invalid, please use type double.")
-    exit(1)
+    stop("The type of the input Matrix is invalid, please use type double.")
   }
 
   muttable <- as.table(mutatmatrix)
-  muttable
+  return(muttable)
 }
 
 # [END]

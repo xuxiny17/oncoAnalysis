@@ -81,7 +81,7 @@ Wickham, Hadley, Winston Chang, and Maintainer Hadley Wickham.
 "Package ‘ggplot2’." Create elegant data visualisations using the grammar
 of graphics. Version 2.1 (2016): 1-189.
 
-#'SimonGSimonG4, et al.
+SimonGSimonG4, et al.
 “‘Correct’ Way to Specifiy Optional Arguments in R Functions.”
 Stack Overflow, 1 Apr. 1962
 \href{https://stackoverflow.com/questions/28370249/correct-way-to-specifiy-optional-arguments-in-r-functions}{Link}
@@ -90,4 +90,8 @@ Charif, D. and Lobry, J.R. (2007). SeqinR 1.0-2: a contributed package to the
 R project for statistical computing devoted to biological sequences retrieval
 and analysis
 \href{https://cran.r-project.org/web/packages/seqinr/index.html}{Link}
+
+user2588829, et al.
+“Break/Exit Script.” Stack Overflow, 24 July 2013,
+\href{https://stackoverflow.com/questions/17837289/break-exit-script}{Link}.
 }

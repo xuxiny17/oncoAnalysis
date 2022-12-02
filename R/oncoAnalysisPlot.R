@@ -67,7 +67,7 @@
 #'"Package ‘ggplot2’." Create elegant data visualisations using the grammar
 #'of graphics. Version 2.1 (2016): 1-189.
 #'
-#'#'SimonGSimonG4, et al.
+#'SimonGSimonG4, et al.
 #'“‘Correct’ Way to Specifiy Optional Arguments in R Functions.”
 #'Stack Overflow, 1 Apr. 1962
 #'\href{https://stackoverflow.com/questions/28370249/correct-way-to-specifiy-optional-arguments-in-r-functions}{Link}
@@ -77,14 +77,17 @@
 #'and analysis
 #'\href{https://cran.r-project.org/web/packages/seqinr/index.html}{Link}
 #'
+#'user2588829, et al.
+#'“Break/Exit Script.” Stack Overflow, 24 July 2013,
+#'\href{https://stackoverflow.com/questions/17837289/break-exit-script}{Link}.
+#'
 #' @export
 #' @importFrom ggplot2 ggplot
 #' @importFrom seqinr read.fasta
 mutPlot <- function(mutvals, barcolor, title_name, x_name, y_name) {
   # Check if the input is valid
   if (typeof(mutvals) != "list" && length(mutvals) != 7) {
-    print("The input of Checker result is invalid.")
-    exit(1)
+    stop("The input of Checker result is invalid.")
   }
 
   # Setup the default values
@@ -209,17 +212,19 @@ mutPlot <- function(mutvals, barcolor, title_name, x_name, y_name) {
 #'and analysis
 #'\href{https://cran.r-project.org/web/packages/seqinr/index.html}{Link}
 #'
+#'user2588829, et al.
+#'“Break/Exit Script.” Stack Overflow, 24 July 2013,
+#'\href{https://stackoverflow.com/questions/17837289/break-exit-script}{Link}.
+#'
 #' @export
 #' @importFrom ggplot2 ggplot
 #' @importFrom seqinr read.fasta
 mutCompPlot <- function(datahea, datamut, title_name, x_name, y_name) {
   # Check if input is valid
   if (typeof(datahea) != "character") {
-    print("The Type of Healthy Sequence is invalid, please use character type.")
-    exit(1)
+    stop("The Type of Healthy Sequence is invalid, please use character type.")
   } else if (typeof(datamut) != "character") {
-    print("The Type of Mutated Sequence is invalid, please use character type.")
-    exit(1)
+    stop("The Type of Mutated Sequence is invalid, please use character type.")
   }
 
   # Setup the default values
@@ -231,6 +236,12 @@ mutCompPlot <- function(datahea, datamut, title_name, x_name, y_name) {
   }
   if (missing(y_name)) {
     y_name = "Frequency"
+  }
+
+  if (length(datahea) < length(datamut)) {
+    print("Note: Insertion happened.")
+  } else if (length(datahea) > length(datamut)) {
+    print("Note: Deletion happened.")
   }
 
   # Modify and clean the data
