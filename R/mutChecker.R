@@ -147,7 +147,8 @@ mutChecker <- function(datahea,
     # Use while loop to track the sequence
     while (tracker <= length(datahea)) {
       # Check if the bases are identical one by one
-      if (datahea[tracker] != datamut[tracker]) {
+      if ((datahea[tracker] != datamut[tracker]) && (! is.na(datahea[tracker]))
+          && (! is.na(datamut[tracker]))) {
         if (datahea[tracker] == 'a') {
           a <- a + 1 # Calculate the number of mutated base A in original sequence
           if (datamut[tracker] == 't') {
