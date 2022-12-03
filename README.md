@@ -63,14 +63,18 @@ DNA sequence is valid (contain characters other than ATCGatcg or not),
 if valid, it returns the sequence contained, otherwise the function
 terminates and produce error message.
 
-The *mutChecker* function (analysis function) takes in two DNA sequence
-and check if the suspected mutated sequence is different from the
-healthy version, if so, output the mutation details. In details, the
-output contains the number of total mutations, the number of Base A, T
-C, G mutated receptively, the positions that the mutation occured, and a
-mutation detailed matrix containing information which illustrates which
-base was mutated to which in mutated sequence compared to the healthy
-version.
+The *mutChecker* function (analysis function) takes in two same length
+DNA sequences and check if the suspected mutated sequence is different
+from the healthy version, if so, output the mutation details. In
+details, the output contains the number of total base changes, the
+number of Base A, T C, G mutated receptively, the positions that the
+base changes occurred, and a base changes detailed matrix containing
+information which illustrates which base was mutated to which in mutated
+sequence compared to the healthy version.
+
+If the length of the two input DNA sequences are different, it would
+print in the console telling the user whether there is deletion or
+insertion happened.
 
 The *mutTable* (analysis function) generates a simple table which
 illustrates the matrix output by the *mutChecker* function. The column
@@ -163,6 +167,13 @@ Silva, Anjali. “Anjalisilva/TestingPackage: A Simple R Package
 Illustrating Components of an R Package: 2019-2022 BCB410H - Applied
 Bioinformatics, University of Toronto, Canada.” GitHub,
 <https://github.com/anjalisilva/TestingPackage>.
+
+mikemike, et al. “Test If Characters Are in a String.” Stack Overflow,
+12 Apr. 2012,
+<https://stackoverflow.com/questions/10128617/test-if-characters-are-in-a-string>.
+
+user2588829, et al. “Break/Exit Script.” Stack Overflow, 24 July 2013,
+<https://stackoverflow.com/questions/17837289/break-exit-script>.
 
 R Core Team (2022). R: A language and environment for statistical
 computing. R Foundation for Statistical Computing, Vienna, Austria. URL

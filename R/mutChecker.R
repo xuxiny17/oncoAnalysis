@@ -5,7 +5,8 @@
 #' @param datahea A vector containing DNA sequence(healthy)
 #' @param datamut A vector containing DNA sequence(suspect mutated)
 #'
-#' @return Returns a list containing mutation details.
+#' @return Returns a list containing mutation details if the length of sequences
+#'    are the same.
 #' \itemize{
 #'   \item The total number of mutations.
 #'   \item The number of Base A mutated.
@@ -54,6 +55,20 @@
 #' mutCheckerResults <- mutChecker(
 #'                           sampleseq1,
 #'                           samplemutseq1)
+#'
+#' # Example 3:
+#' # Import data using fastaReader
+#' # Note: to read FASTA files, it requires installation of seqinr R package
+#' library("seqinr")
+#' inputhea <- system.file("extdata", "sample.fasta", package = "oncoAnalysis")
+#' inputmut <- system.file("extdata", "samplemut.fasta", package = "oncoAnalysis")
+#'
+#' # Read using fastaReader()
+#' sampleseq <- fastaReader(inputhea)
+#' samplemutseq <- fastaReader(inputmut)
+#'
+#' # Check the number of mutations.
+#' mutCheckerResults <- mutChecker(sampleseq, samplemutseq)
 #'
 #' @references
 #'Charif, D. and Lobry, J.R. (2007). SeqinR 1.0-2: a contributed package to the
@@ -121,11 +136,13 @@ mutChecker <- function(datahea,
     print("There is Base Deletion")
     differ <- length(datahea) - length(datamut)
     print(sprintf("The deletion happened at least: %d times", differ))
+    # return(invisible(NULL))
   } else if (length(datahea) < length(datamut)) {
     # Print the type and the number of base insertion.
     print("There is Base Insertion.")
     print(sprintf("The insertion happened at least: %d times",
                   (length(datamut) - length(datahea))))
+    # return(invisible(NULL))
   } else if (length(datahea) == length(datamut)) {
     # Use while loop to track the sequence
     while (tracker <= length(datahea)) {
@@ -280,7 +297,7 @@ mutChecker <- function(datahea,
 #' sampleseq1 <- sampleseq[1:(length(sampleseq))]
 #' samplemutseq1 <- samplemutseq[1:(length(samplemutseq))]
 #'
-#' # Check the number of mutations.
+#' # Check the number of base changes.
 #' mutCheckerResults <- mutChecker(
 #'                           sampleseq1,
 #'                           samplemutseq1)
@@ -302,10 +319,26 @@ mutChecker <- function(datahea,
 #' sampleseq1 <- sampleseq$Sample[1:(length(sampleseq$Sample))]
 #' samplemutseq1 <- samplemutseq$Samplemut[1:(length(samplemutseq$Samplemut))]
 #'
-#' # Check the number of mutations.
+#' # Check the number of base changes.
 #' mutCheckerResults <- mutChecker(
 #'                           sampleseq1,
 #'                           samplemutseq1)
+#' mutTable(mutCheckerResults$MutMatrix)
+#'
+#' # Example 3:
+#' # Import data using fastaReader
+#' # Note: to read FASTA files, it requires installation of seqinr R package
+#' library("seqinr")
+#' inputhea <- system.file("extdata", "sample.fasta", package = "oncoAnalysis")
+#' inputmut <- system.file("extdata", "samplemut.fasta", package = "oncoAnalysis")
+#'
+#' # Read using fastaReader()
+#' sampleseq <- fastaReader(inputhea)
+#' samplemutseq <- fastaReader(inputmut)
+#'
+#' # Check the number of base changes.
+#' mutCheckerResults <- mutChecker(sampleseq, samplemutseq)
+#'
 #' mutTable(mutCheckerResults$MutMatrix)
 #'
 #' @references

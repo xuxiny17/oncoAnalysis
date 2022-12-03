@@ -29,7 +29,7 @@ A function that displays Mutation Matrix in table format
 sampleseq1 <- sampleseq[1:(length(sampleseq))]
 samplemutseq1 <- samplemutseq[1:(length(samplemutseq))]
 
-# Check the number of mutations.
+# Check the number of base changes.
 mutCheckerResults <- mutChecker(
                           sampleseq1,
                           samplemutseq1)
@@ -51,10 +51,26 @@ samplemutseq <- seqinr::read.fasta(file = inputmut)
 sampleseq1 <- sampleseq$Sample[1:(length(sampleseq$Sample))]
 samplemutseq1 <- samplemutseq$Samplemut[1:(length(samplemutseq$Samplemut))]
 
-# Check the number of mutations.
+# Check the number of base changes.
 mutCheckerResults <- mutChecker(
                           sampleseq1,
                           samplemutseq1)
+mutTable(mutCheckerResults$MutMatrix)
+
+# Example 3:
+# Import data using fastaReader
+# Note: to read FASTA files, it requires installation of seqinr R package
+library("seqinr")
+inputhea <- system.file("extdata", "sample.fasta", package = "oncoAnalysis")
+inputmut <- system.file("extdata", "samplemut.fasta", package = "oncoAnalysis")
+
+# Read using fastaReader()
+sampleseq <- fastaReader(inputhea)
+samplemutseq <- fastaReader(inputmut)
+
+# Check the number of base changes.
+mutCheckerResults <- mutChecker(sampleseq, samplemutseq)
+
 mutTable(mutCheckerResults$MutMatrix)
 
 }

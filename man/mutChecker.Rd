@@ -12,7 +12,8 @@ mutChecker(datahea, datamut)
 \item{datamut}{A vector containing DNA sequence(suspect mutated)}
 }
 \value{
-Returns a list containing mutation details.
+Returns a list containing mutation details if the length of sequences
+are the same.
 \itemize{
 \item The total number of mutations.
 \item The number of Base A mutated.
@@ -64,6 +65,20 @@ samplemutseq1 <- samplemutseq$Samplemut[1:(length(samplemutseq$Samplemut))]
 mutCheckerResults <- mutChecker(
                           sampleseq1,
                           samplemutseq1)
+
+# Example 3:
+# Import data using fastaReader
+# Note: to read FASTA files, it requires installation of seqinr R package
+library("seqinr")
+inputhea <- system.file("extdata", "sample.fasta", package = "oncoAnalysis")
+inputmut <- system.file("extdata", "samplemut.fasta", package = "oncoAnalysis")
+
+# Read using fastaReader()
+sampleseq <- fastaReader(inputhea)
+samplemutseq <- fastaReader(inputmut)
+
+# Check the number of mutations.
+mutCheckerResults <- mutChecker(sampleseq, samplemutseq)
 
 }
 \references{

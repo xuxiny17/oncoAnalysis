@@ -53,6 +53,22 @@
 #'
 #' mutPlot(mutvals = mutCheckerResults)
 #'
+#' # Example 3:
+#' # Import data using fastaReader
+#' # Note: to read FASTA files, it requires installation of seqinr R package
+#' library("seqinr")
+#' inputhea <- system.file("extdata", "sample.fasta", package = "oncoAnalysis")
+#' inputmut <- system.file("extdata", "samplemut.fasta", package = "oncoAnalysis")
+#'
+#' # Read using fastaReader()
+#' sampleseq <- fastaReader(inputhea)
+#' samplemutseq <- fastaReader(inputmut)
+#'
+#' # Check the number of base changes.
+#' mutCheckerResults <- mutChecker(sampleseq, samplemutseq)
+#'
+#' mutPlot(mutvals = mutCheckerResults)
+#'
 #'@references
 #'Holtz, Yan. “Basic Histogram with GGPLOT2.” – The R Graph Gallery.
 #'\href{https://r-graph-gallery.com/220-basic-ggplot2-histogram.html}{Link}
@@ -179,6 +195,23 @@ mutPlot <- function(mutvals, barcolor, title_name, x_name, y_name) {
 #'
 #' # Compare the base numbers in Sequence.
 #' mutCompPlot(sampleseq1, samplemutseq1)
+#'
+#' # Example 3:
+#' # Import data using fastaReader
+#' # Note: to read FASTA files, it requires installation of seqinr R package
+#' library("seqinr")
+#' inputhea <- system.file("extdata", "sample.fasta", package = "oncoAnalysis")
+#' inputmut <- system.file("extdata", "samplemut.fasta", package = "oncoAnalysis")
+#'
+#' # Read using fastaReader()
+#' sampleseq <- fastaReader(inputhea)
+#' samplemutseq <- fastaReader(inputmut)
+#'
+#' # Check the number of base changes.
+#' mutCheckerResults <- mutChecker(sampleseq, samplemutseq)
+#'
+#' # Compare the base numbers in Sequence.
+#' mutCompPlot(sampleseq, samplemutseq)
 #'
 #'@references
 #'Holtz, Yan. “Basic Histogram with GGPLOT2.” – The R Graph Gallery.

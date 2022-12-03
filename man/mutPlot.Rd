@@ -66,6 +66,22 @@ mutCheckerResults <- mutChecker(
 
 mutPlot(mutvals = mutCheckerResults)
 
+# Example 3:
+# Import data using fastaReader
+# Note: to read FASTA files, it requires installation of seqinr R package
+library("seqinr")
+inputhea <- system.file("extdata", "sample.fasta", package = "oncoAnalysis")
+inputmut <- system.file("extdata", "samplemut.fasta", package = "oncoAnalysis")
+
+# Read using fastaReader()
+sampleseq <- fastaReader(inputhea)
+samplemutseq <- fastaReader(inputmut)
+
+# Check the number of base changes.
+mutCheckerResults <- mutChecker(sampleseq, samplemutseq)
+
+mutPlot(mutvals = mutCheckerResults)
+
 }
 \references{
 Holtz, Yan. “Basic Histogram with GGPLOT2.” – The R Graph Gallery.
