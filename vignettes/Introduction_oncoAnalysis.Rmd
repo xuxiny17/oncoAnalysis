@@ -63,7 +63,7 @@ data(package = "oncoAnalysis")
 
 ### Package contents
 
-* The **R subdirectory** In this package, **R subdirectory** currently contains **data.R**, **mutChecker.R**, and **oncoAnalysisPlot.R**.
+* The **R subdirectory** In this package, **R subdirectory** currently contains **data.R**, **mutChecker.R**, **dataImporter.R** and **oncoAnalysisPlot.R**.
 
 * The **man subdirectory** contains help documentation, the .Rd files for this package is generated using *roxygen2* package. 
 
