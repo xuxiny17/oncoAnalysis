@@ -4,7 +4,9 @@
 #'
 #' @param filename The file name of the FASTA file wish to be read.
 #'
-#' @return A list of Base Characters.
+#' @return A Base Characters contained in the sequence. (In real case,
+#'    the number of returned items would equal to the length of the input
+#'    DNA sequence if sequence is valid.)
 #'
 #' @examples
 #' # Example 1:

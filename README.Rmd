@@ -27,7 +27,7 @@ The goal of `oncoAnalysis` package is to develop functions that check if there i
 
 The package is currently under construction and the current version contains two analysis functions and two plotting functions. The two analysis functions are able to compare the contents of two DNA FASTA files and obtain the mutation details which current work seem to be lack of. The plotting functions visualize the results obtained from the analysis functions and display them in a clearer way. 
 
-The current package does not handle false input, the function which imports and processes data would be implemented in the next version. 
+The current package does not handle frame shift of base sequence. The function might be implement in the future. 
 
 The `oncoAnalysis` package was developed using `R version 4.2.1 (2022-06-23)`, `Platform: x86_64-apple-darwin17.0 (64-bit)` and `Running under: macOS Ventura 13.0.1`.
 

@@ -7,9 +7,11 @@
 mutChecker(datahea, datamut)
 }
 \arguments{
-\item{datahea}{A vector containing DNA sequence(healthy)}
+\item{datahea}{A character vector containing letters A,C,T,G that
+corresponds to control/healthy DNA sequence.}
 
-\item{datamut}{A vector containing DNA sequence(suspect mutated)}
+\item{datamut}{a character vector containing letters A,C,T,G that
+corresponds to suspect mutated DNA sequence.}
 }
 \value{
 Returns a list containing mutation details if the length of sequences

@@ -10,7 +10,9 @@ fastaReader(filename)
 \item{filename}{The file name of the FASTA file wish to be read.}
 }
 \value{
-A list of Base Characters.
+A Base Characters contained in the sequence. (In real case,
+the number of returned items would equal to the length of the input
+DNA sequence if sequence is valid.)
 }
 \description{
 A function that reads in FASTA files and check if valid.

@@ -26,8 +26,8 @@ files and obtain the mutation details which current work seem to be lack
 of. The plotting functions visualize the results obtained from the
 analysis functions and display them in a clearer way.
 
-The current package does not handle false input, the function which
-imports and processes data would be implemented in the next version.
+The current package does not handle frame shift of base sequence. The
+function might be implement in the future.
 
 The `oncoAnalysis` package was developed using
 `R version 4.2.1 (2022-06-23)`,

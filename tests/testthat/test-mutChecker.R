@@ -50,7 +50,6 @@ test_that("mutChecker error upon invalid user input", {
 
   # Incorrect Mutated Seq input
   expect_error(mutCheckerResults <- mutChecker(sampleseq1, 1))
-  expect_error(mutCheckerResults <- mutChecker(sampleseq1, "AA"))
 
   # Incorrect Both Seq input
   expect_error(mutCheckerResults <- mutChecker(sampleseq, samplemutseq))
