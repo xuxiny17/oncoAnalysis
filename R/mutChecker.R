@@ -138,12 +138,16 @@ mutChecker <- function(datahea,
     print("There is Base Deletion")
     differ <- length(datahea) - length(datamut)
     return(print(sprintf("The deletion happened at least: %d times", differ)))
-  } else if (length(datahea) < length(datamut)) {
+  }
+
+  if (length(datahea) < length(datamut)) {
     # Print the type and the number of base insertion.
     print("There is Base Insertion.")
     return(print(sprintf("The insertion happened at least: %d times",
                          (length(datamut) - length(datahea)))))
-  } else if (length(datahea) == length(datamut)) {
+  }
+
+  if (length(datahea) == length(datamut)) {
     # Use while loop to track the sequence
     while (tracker <= length(datahea)) {
       # Check if the bases are identical one by one
