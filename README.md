@@ -175,6 +175,9 @@ mikemike, et al. “Test If Characters Are in a String.” Stack Overflow,
 user2588829, et al. “Break/Exit Script.” Stack Overflow, 24 July 2013,
 <https://stackoverflow.com/questions/17837289/break-exit-script>.
 
+Sievert, Carson. Interactive web-based data visualization with R,
+plotly, and shiny. CRC Press, 2020.
+
 R Core Team (2022). R: A language and environment for statistical
 computing. R Foundation for Statistical Computing, Vienna, Austria. URL
 <https://www.R-project.org/>.
