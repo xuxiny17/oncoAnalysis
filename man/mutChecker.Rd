@@ -10,7 +10,7 @@ mutChecker(datahea, datamut)
 \item{datahea}{A character vector containing letters A,C,T,G that
 corresponds to control/healthy DNA sequence.}
 
-\item{datamut}{a character vector containing letters A,C,T,G that
+\item{datamut}{A character vector containing letters A,C,T,G that
 corresponds to suspect mutated DNA sequence.}
 }
 \value{
@@ -23,8 +23,8 @@ are the same.
 \item The number of Base C mutated.
 \item The number of Base G mutated.
 \item The position of each mutation.
-\item The matrix containing mutation details. (Column names represent the
-base in original sequence, Role names represent the base in
+\item The matrix containing mutation details. (Role names represent the
+base in original sequence, Column names represent the base in
 mutated sequence. Used to check for example how many base A has mutated
 into base T.)
 }

@@ -150,8 +150,10 @@ mutPlot <- function(mutvals, barcolor, title_name, x_name, y_name) {
 #' A function that visualize the base number comparison between healthy
 #' and mutated Sequence.
 #'
-#' @param datahea A vector containing DNA sequence(healthy)
-#' @param datamut A vector containing DNA sequence(suspect mutated)
+#' @param datahea A character vector containing letters A,C,T,G that
+#'    corresponds to control/healthy DNA sequence.
+#' @param datamut A character vector containing letters A,C,T,G that
+#'    corresponds to suspect mutated DNA sequence.
 #' @param title_name An optional parameter which determines the title name of.
 #'    the plot
 #' @param x_name An optional parameter which determines x axis label.

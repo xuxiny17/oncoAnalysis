@@ -20,11 +20,15 @@ vignettes, tests, data and inst. The package is build for BCB410H
 (Applied Bioinformatics) course work.
 
 The package is currently under construction and the current version
-contains two analysis functions and two plotting functions. The two
-analysis functions are able to compare the contents of two DNA FASTA
-files and obtain the mutation details which current work seem to be lack
-of. The plotting functions visualize the results obtained from the
-analysis functions and display them in a clearer way.
+contains one FASTA reading function, two analysis functions, two
+plotting functions and one function to launch the shiny app. The FASTA
+reading function was able to read in FATSA files, check if the DNA
+sequence is valid and output sequence. The two analysis functions are
+able to compare the contents of two DNA FASTA files and obtain the
+mutation details which current work seem to be lack of. The plotting
+functions visualize the results obtained from the analysis functions and
+display them in a clearer way. The function which launches the shiny app
+is used for opening the shiny app.
 
 The current package does not handle frame shift of base sequence. The
 function might be implement in the future.
@@ -46,7 +50,11 @@ devtools::install_github("xuxiny17/oncoAnalysis", build_vignettes = TRUE)
 library("oncoAnalysis")
 ```
 
-To run the shinyApp: Under construction
+To run the shinyApp:
+
+``` r
+oncoAnalysis::runoncoAnalysis()
+```
 
 ## Overview
 
@@ -56,7 +64,7 @@ data(package = "oncoAnalysis")
 browseVignettes("oncoAnalysis") 
 ```
 
-`oncoAnalysis` currently contains 5 functions.
+`oncoAnalysis` currently contains 6 functions.
 
 The *fastaReader* function takes in fasta files and check if the input
 DNA sequence is valid (contain characters other than ATCGatcg or not),
@@ -77,13 +85,13 @@ print in the console telling the user whether there is deletion or
 insertion happened.
 
 The *mutTable* (analysis function) generates a simple table which
-illustrates the matrix output by the *mutChecker* function. The column
-names represent the base in original sequence, Role names represent the
-base in mutated sequence. Used to check for example how many base A has
-mutated into base T. (In future updates, the table is expected to be
+illustrates the matrix output by the *mutChecker* function. The Role
+names represent the base in original sequence, Column names represent
+the base in mutated sequence. Used to check for example how many base A
+has mutated into base T. (In future updates, the table is expected to be
 made clearer.)
 
-*mutPlot* is a plotting function that plots the number of each base
+The *mutPlot* is a plotting function that plots the number of each base
 mutated comparing to the healthy sequence.
 
 The *mutCompPlot* is a plotting function that visualizes the base number
@@ -92,27 +100,36 @@ functions could take in optional arguments that specifies the title,
 name, x labels and y labels, if not given, the functions would use
 default values.
 
-The package also contains two DNA sequencing data sets, called
-samplemutseq.rda and sampleseq.rda. Refer to package vignettes for more
-details. The current overview of the package is illustrated below.
+The *runoncoAnalysis* is a shiny app launcher function which opens the
+shiny app for this R package.
+
+The package also contains five DNA sequencing data sets, called
+samplemutseq.rda, sampleseq.rda, samplefalseseq.rda, sampleInsseq.rda
+and sampleDelseq.rda. Refer to package vignettes for more details. The
+current overview of the package is illustrated below.
 
 ![](./inst/extdata/Xinyi_X_A1.png)
 
 ## Contributions
 
-The author of the package is Xu Xinyi. The *mutChecker* function takes
-in DNA sequence and generate detailed mutation information. The code for
-*mutChecker* function uses the loop creating and vector comparing ideas
-illustrated online (See *References* section for detailed documentation,
-no direct codes taken). The code for *mutTable* function uses the table
-creating ideas illustrated online to create a two way table.(See
+The author of the package is Xu Xinyi. The *fastaReader* function takes
+in fasta files and output DNA sequence characters if the sequence is
+valid. The *mutChecker* function takes in DNA sequence and generate
+detailed mutation information. The code for *mutChecker* function uses
+the loop creating and vector comparing ideas illustrated online (See
 *References* section for detailed documentation, no direct codes taken).
+The code for *mutTable* function uses the table creating ideas
+illustrated online to create a two way table.(See *References* section
+for detailed documentation, no direct codes taken). The codes for
+*runoncoAnalysis* function along with the codes in *app.R* R script are
+adapted and imitated the codes from the MPLNClust R package.
 
-The *mutPlot* and *mutCompPlot* function make use of the `ggplot2` R
-package, and the plotting details imitated the tutorials online along
-with the technique of adding optional arguments to the functions (See
-*References* section for detailed documentation, no direct codes taken).
-To read in FASTA files, the package would depend on `seqinr` R package.
+The *fastaReader* function uses the read.fasta() function in `seqinr` R
+package to read the FASTA files. The *mutPlot* and *mutCompPlot*
+function make use of the `ggplot2` R package, and the plotting details
+imitated the tutorials online along with the technique of adding
+optional arguments to the functions (See *References* section for
+detailed documentation, no direct codes taken).
 
 ## References
 
@@ -178,6 +195,14 @@ user2588829, et al. “Break/Exit Script.” Stack Overflow, 24 July 2013,
 Sievert, Carson. Interactive web-based data visualization with R,
 plotly, and shiny. CRC Press, 2020.
 
+Attali D, Edwards T (2021). *shinyalert: Easily Create Pretty Popup
+Messages (Modals) in ‘Shiny’*. R package version 3.0.0,
+<https://CRAN.R-project.org/package=shinyalert>.
+
+Silva, A. et al. (2019). A multivariate Poisson-log normal mixture model
+for clustering transcriptome sequencing data. BMC Bioinformatics 20.
+<https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-019-2916-0>
+
 R Core Team (2022). R: A language and environment for statistical
 computing. R Foundation for Statistical Computing, Vienna, Austria. URL
 <https://www.R-project.org/>.
@@ -218,6 +243,8 @@ package tree structure is provided below.
       |- samplefalseseq.fasta
       |- sampleDel.fasta
       |- sample.fasta
+    |- shiny-scripts
+      |- app.R
   |- man
     |- mutChecker.Rd
     |- mutCompPlot.Rd
@@ -229,11 +256,13 @@ package tree structure is provided below.
     |- fastaReader.Rd
     |- sampleDelseq.Rd
     |- samplefalseseq.Rd
+    |- runoncoAnalysis.Rd
   |- R
     |- data.R
     |- mutChecker.R
     |- oncoAnalysisPlot.R
     |- dataImporter.R
+    |- runoncoAnalysis.R
   |- vignettes
     |- Introduction_oncoAnalysis.Rmd
     |- Xinyi_X_A1.png

@@ -7,9 +7,11 @@
 mutCompPlot(datahea, datamut, title_name, x_name, y_name)
 }
 \arguments{
-\item{datahea}{A vector containing DNA sequence(healthy)}
+\item{datahea}{A character vector containing letters A,C,T,G that
+corresponds to control/healthy DNA sequence.}
 
-\item{datamut}{A vector containing DNA sequence(suspect mutated)}
+\item{datamut}{A character vector containing letters A,C,T,G that
+corresponds to suspect mutated DNA sequence.}
 
 \item{title_name}{An optional parameter which determines the title name of.
 the plot}

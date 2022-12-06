@@ -35,7 +35,7 @@ set.seed(10) # for exact reproducibility
        
 ## Introduction
 
-The goal of `oncoAnalysis` package is to develop functions that check if there is mutations between healthy input DNA FASTA file and mutated(suspected) DNA FASTA file. The package contains the main components: DESCRIPTION, NAMESPACE, man subdirectory, R subdirectory(where functions are storing), LICENSE, README, folder vignettes, tests, data and inst. The package is build for BCB410H (Applied Bioinformatics) course work. The package is currently under construction and the current version contains two analysis functions and two plotting functions. **This document is a brief description of oncoAnalysis (version 0.1.0)**. It was written in R Markdown, using the [knitr](https://cran.r-project.org/package=knitr) package for production. View `help(package = "oncoAnalysis")` for more details. 
+The goal of `oncoAnalysis` package is to develop functions that check if there is mutations between healthy input DNA FASTA file and mutated(suspected) DNA FASTA file. The package contains the main components: DESCRIPTION, NAMESPACE, man subdirectory, R subdirectory(where functions are storing), LICENSE, README, folder vignettes, tests, data and inst. The package is build for BCB410H (Applied Bioinformatics) course work. The package is currently under construction and the current version contains one FASTA reading function, two analysis functions, two plotting functions and one function to launch shiny app. **This document is a brief description of oncoAnalysis (version 0.1.0)**. It was written in R Markdown, using the [knitr](https://cran.r-project.org/package=knitr) package for production. View `help(package = "oncoAnalysis")` for more details. 
 
 To obtain the **oncoAnalysis** package, use the following commands:
 
@@ -63,7 +63,7 @@ data(package = "oncoAnalysis")
 
 ### Package contents
 
-* The **R subdirectory** In this package, **R subdirectory** currently contains **data.R**, **mutChecker.R**, **dataImporter.R** and **oncoAnalysisPlot.R**.
+* The **R subdirectory** In this package, **R subdirectory** currently contains **data.R**, **mutChecker.R**, **dataImporter.R**, **runoncoAnalysis.R** and **oncoAnalysisPlot.R**.
 
 * The **man subdirectory** contains help documentation, the .Rd files for this package is generated using *roxygen2* package. 
 
@@ -75,7 +75,7 @@ data(package = "oncoAnalysis")
 
 * **LICENSE** 
 
-* The **data** This package includes two data sets (DNA sequences): samplemutseq.rda, sampleseq.rda, samplefalseseq.rda, sampleInsseq.rda and sampleDelseq.rda
+* The **data** This package includes five data sets (DNA sequences): samplemutseq.rda, sampleseq.rda, samplefalseseq.rda, sampleInsseq.rda and sampleDelseq.rda
 
 * The **tests** Includes tests for the package. 
 
@@ -89,7 +89,7 @@ data(package = "oncoAnalysis")
 
 ## Read in FASTA Files
 
-We want to first read in the DNA sequence we want, the user could use the `read.fasta` function offered by package *seqinr* package for FASTA file reading or use the `fastaReader()` function offered by *oncoAnalysis* package. 
+We want to first read in the DNA sequence we wish to analyse, the user could use the `read.fasta` function offered by package *seqinr* package for FASTA file reading or use the `fastaReader()` function offered by *oncoAnalysis* package. 
 ```{r file input, message=FALSE}
 # library("seqinr") # Load the required R package
 
@@ -111,13 +111,14 @@ samplemutseq1 <- samplemutseq$Samplemut[1:(length(samplemutseq$Samplemut))]
 ### `fastaReader()`
 The `fastaReader()` function takes in the file name of a FATSA file, and return the Base characters contained in the input FATSA file (If the input is a valid DNA sequence (only contains ATCGatcg), otherwise it would print an error message). 
 ```{r fastaReader insertion, message=FALSE, warning=FALSE, error=FALSE}
-# Read using fastaReader()
+# We get the path of the file we want to read and use fastaReader() to read it.
 inputins <- system.file("extdata", "sampleIns.fasta", package = "oncoAnalysis")
 sampleinsseq <- oncoAnalysis:::fastaReader(inputins)
 sampleinsseq
 ```
 
 ```{r fastaReader deletion, message=FALSE, warning=FALSE, error=FALSE}
+# We get the path of the file we want to read and use fastaReader() to read it.
 inputdel <- system.file("extdata", "sampleDel.fasta", package = "oncoAnalysis")
 sampledelseq <- oncoAnalysis:::fastaReader(inputdel)
 sampledelseq
@@ -132,7 +133,7 @@ mutCheckerResults <- mutChecker(sampleseq1, samplemutseq1)
 mutCheckerResults
 ```
 
-The results contains: 1. The total number of mutations. 2. the Base A, T, C, G mutated respectively, the positions of the mutations in the sequence, and the mutation matrix containing mutation details, where column names represent the base in original sequence, Role names represent the base in mutated sequence. Used to check for example how many base A has mutated into base T.
+The results contains: 1. The total number of mutations. 2. the Base A, T, C, G mutated respectively, the positions of the mutations in the sequence, and the mutation matrix containing mutation details, where Role names represent the base in original sequence, Column names represent the base in mutated sequence. Used to check for example how many base A has mutated into base T.
 
 If the two input sequence has different length, it would print in the console telling the user if there is a deletion or insertion happened. Illustrated as following.
 
@@ -156,7 +157,7 @@ muttable <- mutTable(mutCheckerResults$MutMatrix)
 muttable
 ```
 
-The table generated contains mutation details. (Column names represent the base in original sequence, Role names represent the base in mutated sequence. Used to check for example how many base A has mutated into base T.)
+The table generated contains mutation details. (Role names represent the base in original sequence, Column names represent the base in mutated sequence. Used to check for example how many base A has mutated into base T.)
 
 ## Plot of Mutation Details
 
@@ -169,11 +170,14 @@ mutPlot(mutvals = mutCheckerResults)
 The plot illustrates the number of base mutated (Base A, C, G, T, and Total respectively). 
 
 ### `mutCompPlot`
-The `mutCompPlot()` function visulize the number of bases in healthy and mutated sequence respectively, this gives a clearer view on how the two sequences differ. The function takes in two DNA sequence, the first is healthy version and the second is the suspected mutation one. It could also take in optional arguments title_name, x_name, y_name which allows customization. 
+The `mutCompPlot()` function visualize the number of bases in healthy and mutated sequence respectively, this gives a clearer view on how the two sequences differ. The function takes in two DNA sequence, the first is healthy version and the second is the suspected mutation one. It could also take in optional arguments title_name, x_name, y_name which allows customization. 
 ```{r mutCompPlot , message=FALSE}
 # Plot the mutation Comparison Plot using mutCompPlot()
 mutCompPlot(sampleseq1, samplemutseq1)
 ```
+
+## Launch Shiny App
+The function `runoncoAnalysis()` is a function that opens the Shiny App for the *oncoAnalysis* package. Run the code: `runoncoAnalysis()` to open the shiny app. 
 
 ## Package References
 
@@ -236,6 +240,13 @@ user2588829, et al. “Break/Exit Script.” Stack Overflow, 24 July 2013,
 https://stackoverflow.com/questions/17837289/break-exit-script.
 
 Sievert, Carson. Interactive web-based data visualization with R, plotly, and shiny. CRC Press, 2020.
+
+Attali D, Edwards T (2021). _shinyalert: Easily Create Pretty Popup Messages (Modals) 
+in 'Shiny'_. R package version 3.0.0, https://CRAN.R-project.org/package=shinyalert.
+
+Silva, A. et al. (2019). A multivariate Poisson-log normal mixture model
+for clustering transcriptome sequencing data. BMC Bioinformatics 20.
+https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-019-2916-0
 
 R Core Team (2022). R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria. URL https://www.R-project.org/.
 

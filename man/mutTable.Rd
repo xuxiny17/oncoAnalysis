@@ -12,10 +12,9 @@ mutTable(mutatmatrix)
 \value{
 Displays the mutation table.
 \itemize{
-\item A table containing mutation details. (Column names represent the
-base in original sequence, Role names represent the base in
-mutated sequence. Used to check for example how many base A has mutated
-into base T.)
+\item A table containing mutation details. (Role names represent the base
+in original sequence, Column names represent the base in mutated sequence.
+Used to check for example how many base A has mutated into base T.)
 }
 }
 \description{

@@ -19,7 +19,8 @@ Roxygen: list(markdown = TRUE)
 Imports: 
     ggplot2 (>= 3.4.0),
     seqinr (>= 1.0-2),
-    shiny (>= 1.7.3)
+    shiny (>= 1.7.3),
+    shinyalert (>= 3.0.0)
 Suggests: 
     knitr,
     rmarkdown,
