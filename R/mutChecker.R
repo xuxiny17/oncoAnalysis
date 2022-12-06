@@ -131,7 +131,7 @@ mutChecker <- function(datahea,
   g_to_a <- 0
   g_to_t <- 0
   g_to_c <- 0
-  pos <- c()
+  pos <- NULL
 
   if (length(datahea) > length(datamut)) {
     # Print the type and the number of base deletion

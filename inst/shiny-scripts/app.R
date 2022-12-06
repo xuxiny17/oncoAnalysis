@@ -55,12 +55,12 @@ ui <- fluidPage(
                 label = "Dataset: Select a FASTA dataset to analyze. File should be
                 in .fasta format with DNA sequence contained and suspected healthy.
                 You may download an example dataset above and explore first.",
-                accept = c(".fasta")),
+                accept = ".fasta"),
       fileInput(inputId = "file2",
                 label = "Dataset: Select a FASTA dataset to analyze. File should be
                 in .fasta format with DNA sequence contained and suspected mutated.
                 You may download an example dataset above and explore first.",
-                accept = c(".fasta")),
+                accept = ".fasta"),
 
       # br() element to introduce extra vertical spacing ----
       br(),
