@@ -1,6 +1,8 @@
-#' Check if Mutation Exists along with its numbers
+#' Check if  Base change occurs, if so, output details and corresponding
+#' information (e.g. Base change position, number of certain base changed.)
 #'
-#' A function that checks if there is mutation occurred
+#' A function that outputs the detailed base change information if there is a
+#' change in base happened between the two input DNA sequences.
 #'
 #' @param datahea A character vector containing letters A,C,T,G that
 #'    corresponds to control/healthy DNA sequence.
@@ -29,8 +31,8 @@
 #' # Read in data
 #' load("./data/sampleseq.rda")
 #' load("./data/samplemutseq.rda")
-#' sampleseq1 <- sampleseq[1:(length(sampleseq))]
-#' samplemutseq1 <- samplemutseq[1:(length(samplemutseq))]
+#' sampleseq1 <- sampleseq[seq_len(length(sampleseq))]
+#' samplemutseq1 <- samplemutseq[seq_len(length(samplemutseq))]
 #'
 #' # Check the number of mutations.
 #' mutCheckerResults <- mutChecker(
@@ -50,8 +52,8 @@
 #' samplemutseq <- seqinr::read.fasta(file = inputmut)
 #'
 #' # Process and store data
-#' sampleseq1 <- sampleseq$Sample[1:(length(sampleseq$Sample))]
-#' samplemutseq1 <- samplemutseq$Samplemut[1:(length(samplemutseq$Samplemut))]
+#' sampleseq1 <- sampleseq$Sample[seq_len(length(sampleseq$Sample))]
+#' samplemutseq1 <- samplemutseq$Samplemut[seq_len(length(samplemutseq$Samplemut))]
 #'
 #' # Check the number of mutations.
 #' mutCheckerResults <- mutChecker(
@@ -235,8 +237,8 @@ mutChecker <- function(datahea,
 #' # Using sampleseq and samplemutseq dataset available with package
 #' \dontrun{
 #' # Read in data
-#' sampleseq1 <- sampleseq[1:(length(sampleseq))]
-#' samplemutseq1 <- samplemutseq[1:(length(samplemutseq))]
+#' sampleseq1 <- sampleseq[seq_len(length(sampleseq))]
+#' samplemutseq1 <- samplemutseq[seq_len(length(samplemutseq))]
 #'
 #' # Check the number of base changes.
 #' mutCheckerResults <- mutChecker(
@@ -257,8 +259,8 @@ mutChecker <- function(datahea,
 #' samplemutseq <- seqinr::read.fasta(file = inputmut)
 #'
 #' # Process and store data
-#' sampleseq1 <- sampleseq$Sample[1:(length(sampleseq$Sample))]
-#' samplemutseq1 <- samplemutseq$Samplemut[1:(length(samplemutseq$Samplemut))]
+#' sampleseq1 <- sampleseq$Sample[seq_len(length(sampleseq$Sample))]
+#' samplemutseq1 <- samplemutseq$Samplemut[seq_len(length(samplemutseq$Samplemut))]
 #'
 #' # Check the number of base changes.
 #' mutCheckerResults <- mutChecker(

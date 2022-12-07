@@ -2,7 +2,8 @@
 % Please edit documentation in R/mutChecker.R
 \name{mutChecker}
 \alias{mutChecker}
-\title{Check if Mutation Exists along with its numbers}
+\title{Check if  Base change occurs, if so, output details and corresponding
+information (e.g. Base change position, number of certain base changed.)}
 \usage{
 mutChecker(datahea, datamut)
 }
@@ -30,7 +31,8 @@ into base T.)
 }
 }
 \description{
-A function that checks if there is mutation occurred
+A function that outputs the detailed base change information if there is a
+change in base happened between the two input DNA sequences.
 }
 \examples{
 # Example 1:
@@ -39,8 +41,8 @@ A function that checks if there is mutation occurred
 # Read in data
 load("./data/sampleseq.rda")
 load("./data/samplemutseq.rda")
-sampleseq1 <- sampleseq[1:(length(sampleseq))]
-samplemutseq1 <- samplemutseq[1:(length(samplemutseq))]
+sampleseq1 <- sampleseq[seq_len(length(sampleseq))]
+samplemutseq1 <- samplemutseq[seq_len(length(samplemutseq))]
 
 # Check the number of mutations.
 mutCheckerResults <- mutChecker(
@@ -60,8 +62,8 @@ sampleseq <- seqinr::read.fasta(file = inputhea)
 samplemutseq <- seqinr::read.fasta(file = inputmut)
 
 # Process and store data
-sampleseq1 <- sampleseq$Sample[1:(length(sampleseq$Sample))]
-samplemutseq1 <- samplemutseq$Samplemut[1:(length(samplemutseq$Samplemut))]
+sampleseq1 <- sampleseq$Sample[seq_len(length(sampleseq$Sample))]
+samplemutseq1 <- samplemutseq$Samplemut[seq_len(length(samplemutseq$Samplemut))]
 
 # Check the number of mutations.
 mutCheckerResults <- mutChecker(

@@ -42,7 +42,7 @@ fastaReader <- function(filename) {
   names(fastafile) <- "Sequence"
 
   # Store the sequence
-  fastaseq <- fastafile$Sequence[1:(length(fastafile$Sequence))]
+  fastaseq <- fastafile$Sequence[seq_len(length(fastafile$Sequence))]
 
   # Check if contains invalid DNA base character
   tracker <- 1

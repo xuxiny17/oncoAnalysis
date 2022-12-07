@@ -25,8 +25,8 @@ A function that displays Mutation Matrix in table format
 # Using sampleseq and samplemutseq dataset available with package
 \dontrun{
 # Read in data
-sampleseq1 <- sampleseq[1:(length(sampleseq))]
-samplemutseq1 <- samplemutseq[1:(length(samplemutseq))]
+sampleseq1 <- sampleseq[seq_len(length(sampleseq))]
+samplemutseq1 <- samplemutseq[seq_len(length(samplemutseq))]
 
 # Check the number of base changes.
 mutCheckerResults <- mutChecker(
@@ -47,8 +47,8 @@ sampleseq <- seqinr::read.fasta(file = inputhea)
 samplemutseq <- seqinr::read.fasta(file = inputmut)
 
 # Process and store data
-sampleseq1 <- sampleseq$Sample[1:(length(sampleseq$Sample))]
-samplemutseq1 <- samplemutseq$Samplemut[1:(length(samplemutseq$Samplemut))]
+sampleseq1 <- sampleseq$Sample[seq_len(length(sampleseq$Sample))]
+samplemutseq1 <- samplemutseq$Samplemut[seq_len(length(samplemutseq$Samplemut))]
 
 # Check the number of base changes.
 mutCheckerResults <- mutChecker(

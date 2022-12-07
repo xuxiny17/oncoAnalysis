@@ -22,8 +22,8 @@
 #' # Read in data
 #' load("./data/sampleseq.rda")
 #' load("./data/samplemutseq.rda")
-#' sampleseq1 <- sampleseq[1:(length(sampleseq))]
-#' samplemutseq1 <- samplemutseq[1:(length(samplemutseq))]
+#' sampleseq1 <- sampleseq[seq_len(length(sampleseq))]
+#' samplemutseq1 <- samplemutseq[seq_len(length(samplemutseq))]
 #'
 #' # Check the number of mutations.
 #' mutCheckerResults <- mutChecker(sampleseq1, samplemutseq1)
@@ -43,8 +43,8 @@
 #' samplemutseq <- seqinr::read.fasta(file = inputmut)
 #'
 #' # Process and store data
-#' sampleseq1 <- sampleseq$Sample[1:(length(sampleseq$Sample))]
-#' samplemutseq1 <- samplemutseq$Samplemut[1:(length(samplemutseq$Samplemut))]
+#' sampleseq1 <- sampleseq$Sample[seq_len(length(sampleseq$Sample))]
+#' samplemutseq1 <- samplemutseq$Samplemut[seq_len(length(samplemutseq$Samplemut))]
 #'
 #' # Check the number of mutations.
 #' mutCheckerResults <- mutChecker(
@@ -168,8 +168,8 @@ mutPlot <- function(mutvals, barcolor, title_name, x_name, y_name) {
 #' # Read in data
 #' load("./data/sampleseq.rda")
 #' load("./data/samplemutseq.rda")
-#' sampleseq1 <- sampleseq[1:(length(sampleseq))]
-#' samplemutseq1 <- samplemutseq[1:(length(samplemutseq))]
+#' sampleseq1 <- sampleseq[seq_len(length(sampleseq))]
+#' samplemutseq1 <- samplemutseq[seq_len(length(samplemutseq))]
 #'
 #' # Compare the base numbers in Sequence.
 #' mutCompPlot(sampleseq1, samplemutseq1)
@@ -187,8 +187,8 @@ mutPlot <- function(mutvals, barcolor, title_name, x_name, y_name) {
 #' samplemutseq <- seqinr::read.fasta(file = inputmut)
 #'
 #' # Process and store data
-#' sampleseq1 <- sampleseq$Sample[1:(length(sampleseq$Sample))]
-#' samplemutseq1 <- samplemutseq$Samplemut[1:(length(samplemutseq$Samplemut))]
+#' sampleseq1 <- sampleseq$Sample[seq_len(length(sampleseq$Sample))]
+#' samplemutseq1 <- samplemutseq$Samplemut[seq_len(length(samplemutseq$Samplemut))]
 #'
 #' # Check the number of mutations.
 #' mutCheckerResults <- mutChecker(
