@@ -125,14 +125,14 @@ current overview of the package is illustrated below.
 The author of the package is Xu Xinyi. The *fastaReader* function takes
 in fasta files and output DNA sequence characters if the sequence is
 valid. **The base change details along with the plotting function to
-illustrate the base change results are obtained using functions written
-by the author.** The *mutChecker* function takes in DNA sequence and
-generate detailed mutation information. The code for *mutChecker*
-function uses the loop creating and vector comparing ideas illustrated
-online (See *References* section for detailed documentation, no direct
-codes taken). The code for *mutTable* function uses the table creating
-ideas illustrated online to create a two way table.(See *References*
-section for detailed documentation, no direct codes taken).
+illustrate the base change results use the functions written by the
+author.** The *mutChecker* function takes in DNA sequence and generate
+detailed mutation information. The code for *mutChecker* function uses
+the loop creating and vector comparing ideas illustrated online (See
+*References* section for detailed documentation, no direct codes taken).
+The code for *mutTable* function uses the table creating ideas
+illustrated online to create a two way table.(See *References* section
+for detailed documentation, no direct codes taken).
 
 The codes for *runoncoAnalysis* function along with the codes in *app.R*
 R script are adapted and imitated the codes of the *app.R* and
