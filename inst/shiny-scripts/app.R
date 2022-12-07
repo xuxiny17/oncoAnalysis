@@ -1,4 +1,5 @@
-# The codes are adapted and followed the package MPLNClust.
+# The codes are adapted and imitated following the shiny app of the
+# package MPLNClust.
 # Reference: Silva, Anjali, et al.
 # "A multivariate Poisson-log normal mixture model for clustering transcriptome
 # sequencing data." BMC bioinformatics 20.1 (2019): 1-11.
@@ -18,6 +19,7 @@ ui <- fluidPage(
     # Sidebar panel for inputs ----
     sidebarPanel(
 
+      # Add description to the panel page
       tags$p("Description: This is a Shiny App for oncoAnalysis R package
              (Xu Xinyi et al., 2022). The oncoAnalysis is an R package check if
              there is mutations between healthy input DNA FASTA file and
@@ -31,7 +33,7 @@ ui <- fluidPage(
              results obtained from the analysis functions and display them in
              a clearer way."),
 
-      # br() element to introduce extra vertical spacing ----
+      # Use br() element to introduce extra vertical spacing ----
       br(),
       br(),
 
@@ -45,6 +47,7 @@ ui <- fluidPage(
       br(),
       # input
       # shinyalert::useShinyalert(),  # Comment out the useShinyalert
+      # Add button and file inputs
       uiOutput("tab2"),
       actionButton(inputId = "Sample_Healthy",
                    label = "Sample Data Details"),
@@ -79,6 +82,7 @@ ui <- fluidPage(
     mainPanel(
 
       # Output: Tabet
+      # In total 5 tabs
       tabsetPanel(type = "tabs",
                   tabPanel("DNA Sequence",
                            h3("Instructions: Click 'Run' at the bottom left side."),
@@ -119,6 +123,7 @@ ui <- fluidPage(
   )
 )
 
+# Create the server
 # Define server logic for random distribution app ----
 server <- function(input, output) {
 
@@ -127,7 +132,7 @@ server <- function(input, output) {
   # defined below then use the value computed from this expression
 
 
-  # Step I: Save input fasta as a reactive
+  # Step I: Save input Fasta files as a reactive
   fileinput_healthy <- reactive({
     if (! is.null(input$file1)) {
       oncoAnalysis::fastaReader(input$file1$datapath)
@@ -152,6 +157,7 @@ server <- function(input, output) {
   })
 
   # Textoutput
+  # Print the Sequences contained in the FASTA file.
   output$textOut <- renderPrint({
     # Get the healthy sequence
     if (! is.null(input$file1)) {
@@ -167,7 +173,7 @@ server <- function(input, output) {
   })
 
   # Step II:
-  # MutChecker
+  # MutChecker Function and its output
   output$mutChecker <- renderPrint({
     # Get the healthy sequence
     if (! is.null(input$file1)) {
@@ -190,7 +196,7 @@ server <- function(input, output) {
     }
   })
 
-  # MutTable
+  # MutTable Function and Output
   output$mutTable <- renderTable({
     # Get the healthy sequence
     if (! is.null(input$file1)) {
