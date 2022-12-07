@@ -7,8 +7,8 @@ Compare DNA Sequences and Check if Mutated.
 
 <!-- badges: start -->
 <!-- https://www.codefactor.io/repository/github/xuxiny17/oncoanalysis/issues -->
-<!-- [![CodeFactor](https://www.codefactor.io/repository/github/xuxiny17/oncoanalysis/badge)](https://www.codefactor.io/repository/github/xuxiny17/oncoanalysis) -->
 
+[![CodeFactor](https://www.codefactor.io/repository/github/xuxiny17/oncoanalysis/badge)](https://www.codefactor.io/repository/github/xuxiny17/oncoanalysis)
 [![GitHub
 issues](https://img.shields.io/github/issues/xuxiny17/oncoanalysis)](https://github.com/xuxiny17/oncoAnalysis/issues)
 [![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
