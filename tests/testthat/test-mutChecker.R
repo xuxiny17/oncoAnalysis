@@ -11,8 +11,8 @@ test_that("mutChecker output", {
   samplemutseq <- seqinr::read.fasta(file = inputmut)
 
   # Process and store data
-  sampleseq1 <- sampleseq$Sample[1:(length(sampleseq$Sample))]
-  samplemutseq1 <- samplemutseq$Samplemut[1:(length(samplemutseq$Samplemut))]
+  sampleseq1 <- sampleseq$Sample[seq_len(length(sampleseq$Sample))]
+  samplemutseq1 <- samplemutseq$Samplemut[seq_len(length(samplemutseq$Samplemut))]
 
   # Check the number of mutations.
   mutCheckerResults <- mutChecker(sampleseq1, samplemutseq1)
@@ -42,8 +42,8 @@ test_that("mutChecker error upon invalid user input", {
 
 
   # Process and store data
-  sampleseq1 <- sampleseq$Sample[1:(length(sampleseq$Sample))]
-  samplemutseq1 <- samplemutseq$Samplemut[1:(length(samplemutseq$Samplemut))]
+  sampleseq1 <- sampleseq$Sample[seq_len(length(sampleseq$Sample))]
+  samplemutseq1 <- samplemutseq$Samplemut[seq_len(length(samplemutseq$Samplemut))]
 
   # Incorrect Healthy Seq input
   expect_error(mutCheckerResults <- mutChecker(1, samplemutseq1))
@@ -67,8 +67,8 @@ test_that("mutTable output", {
   samplemutseq <- seqinr::read.fasta(file = inputmut)
 
   # Process and store data
-  sampleseq1 <- sampleseq$Sample[1:(length(sampleseq$Sample))]
-  samplemutseq1 <- samplemutseq$Samplemut[1:(length(samplemutseq$Samplemut))]
+  sampleseq1 <- sampleseq$Sample[seq_len(length(sampleseq$Sample))]
+  samplemutseq1 <- samplemutseq$Samplemut[seq_len(length(samplemutseq$Samplemut))]
 
   # Check the number of mutations.
   mutCheckerResults <- mutChecker(sampleseq1, samplemutseq1)
@@ -103,8 +103,8 @@ test_that("mutTable error upon invalid user input", {
   samplemutseq <- seqinr::read.fasta(file = inputmut)
 
   # Process and store data
-  sampleseq1 <- sampleseq$Sample[1:(length(sampleseq$Sample))]
-  samplemutseq1 <- samplemutseq$Samplemut[1:(length(samplemutseq$Samplemut))]
+  sampleseq1 <- sampleseq$Sample[seq_len(length(sampleseq$Sample))]
+  samplemutseq1 <- samplemutseq$Samplemut[seq_len(length(samplemutseq$Samplemut))]
 
   # Check the number of mutations.
   mutCheckerResults <- mutChecker(sampleseq1, samplemutseq1)

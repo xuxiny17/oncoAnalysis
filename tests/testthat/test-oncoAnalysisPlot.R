@@ -11,8 +11,8 @@ test_that("mutPlot output", {
   samplemutseq <- seqinr::read.fasta(file = inputmut)
 
   # Process and store data
-  sampleseq1 <- sampleseq$Sample[1:(length(sampleseq$Sample))]
-  samplemutseq1 <- samplemutseq$Samplemut[1:(length(samplemutseq$Samplemut))]
+  sampleseq1 <- sampleseq$Sample[seq_len(length(sampleseq$Sample))]
+  samplemutseq1 <- samplemutseq$Samplemut[seq_len(length(samplemutseq$Samplemut))]
 
   # Check the number of mutations.
   mutCheckerResults <- mutChecker(sampleseq1, samplemutseq1)
@@ -48,8 +48,8 @@ test_that("mutPlot error upon invalid user input", {
 
 
   # Process and store data
-  sampleseq1 <- sampleseq$Sample[1:(length(sampleseq$Sample))]
-  samplemutseq1 <- samplemutseq$Samplemut[1:(length(samplemutseq$Samplemut))]
+  sampleseq1 <- sampleseq$Sample[seq_len(length(sampleseq$Sample))]
+  samplemutseq1 <- samplemutseq$Samplemut[seq_len(length(samplemutseq$Samplemut))]
 
   # Check the number of mutations.
   mutCheckerResults <- mutChecker(sampleseq1, samplemutseq1)
@@ -69,8 +69,8 @@ test_that("mutCompPlot output", {
   samplemutseq <- seqinr::read.fasta(file = inputmut)
 
   # Process and store data
-  sampleseq1 <- sampleseq$Sample[1:(length(sampleseq$Sample))]
-  samplemutseq1 <- samplemutseq$Samplemut[1:(length(samplemutseq$Samplemut))]
+  sampleseq1 <- sampleseq$Sample[seq_len(length(sampleseq$Sample))]
+  samplemutseq1 <- samplemutseq$Samplemut[seq_len(length(samplemutseq$Samplemut))]
 
   # Check the number of mutations.
   mutCheckerResults <- mutChecker(sampleseq1, samplemutseq1)
@@ -105,8 +105,8 @@ test_that("mutCompPlot error upon invalid user input", {
   samplemutseq <- seqinr::read.fasta(file = inputmut)
 
   # Process and store data
-  sampleseq1 <- sampleseq$Sample[1:(length(sampleseq$Sample))]
-  samplemutseq1 <- samplemutseq$Samplemut[1:(length(samplemutseq$Samplemut))]
+  sampleseq1 <- sampleseq$Sample[seq_len(length(sampleseq$Sample))]
+  samplemutseq1 <- samplemutseq$Samplemut[seq_len(length(samplemutseq$Samplemut))]
 
   # Incorrect Random Input
   expect_error(mutcomplot <- mutCompPlot(1234, samplemutseq1))
