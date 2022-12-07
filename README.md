@@ -54,7 +54,8 @@ You can install the development version of oncoAnalysis from
 
 ``` r
 # install.packages("devtools")
-library("devtools")
+# library("devtools")
+require("devtools")
 devtools::install_github("xuxiny17/oncoAnalysis", build_vignettes = TRUE)
 library("oncoAnalysis")
 ```
@@ -129,16 +130,24 @@ the loop creating and vector comparing ideas illustrated online (See
 *References* section for detailed documentation, no direct codes taken).
 The code for *mutTable* function uses the table creating ideas
 illustrated online to create a two way table.(See *References* section
-for detailed documentation, no direct codes taken). The codes for
-*runoncoAnalysis* function along with the codes in *app.R* R script are
-adapted and imitated the codes from the MPLNClust R package.
+for detailed documentation, no direct codes taken).
+
+The codes for *runoncoAnalysis* function along with the codes in *app.R*
+R script are adapted and imitated the codes of the MPLNClust R package.
+The *runoncoAnalysis* function also used the help of function reference
+webpage of shiny app: [Function
+Reference](https://shiny.rstudio.com/reference/shiny/1.0.5/) along with
+[stackoverflow](https://stackoverflow.com/questions/29041449/r-shiny-error-in-catlist-file-sep-fill-labels-append-argument)
+to resolve issues. (See *References* section for detailed
+documentation.)
 
 The *fastaReader* function uses the read.fasta() function in `seqinr` R
 package to read the FASTA files. The *mutPlot* and *mutCompPlot*
 function make use of the `ggplot2` R package, and the plotting details
 imitated the tutorials online along with the technique of adding
-optional arguments to the functions (See *References* section for
-detailed documentation, no direct codes taken).
+optional arguments to the functions. The *runoncoAnalysis* function used
+the `shiny` R package and `shinyalert` R package to build the shiny app.
+(See *References* section for detailed documentation).
 
 ## References
 
@@ -201,6 +210,16 @@ mikemike, et al. “Test If Characters Are in a String.” Stack Overflow,
 user2588829, et al. “Break/Exit Script.” Stack Overflow, 24 July 2013,
 <https://stackoverflow.com/questions/17837289/break-exit-script>.
 
+Johnston, Jacob, et al. “R - Shiny: Error in Cat(List(…), File, Sep,
+Fill, Labels, Append) : Argument 1 (Type ‘List’) Cannot Be Handled by
+‘Cat’.” Stack Overflow, 13 Mar. 2015,
+<https://stackoverflow.com/questions/29041449/r-shiny-error-in-catlist-file-sep-fill-labels-append-argument>.
+
+Chang W, Cheng J, Allaire J, Sievert C, Schloerke B, Xie Y, Allen J,
+McPherson J, ipert A, Borges B (2022). *shiny: Web Application Framework
+for R*. R package version 1.7.3,
+<https://CRAN.R-project.org/package=shiny>.
+
 Sievert, Carson. Interactive web-based data visualization with R,
 plotly, and shiny. CRC Press, 2020.
 
@@ -211,6 +230,9 @@ Messages (Modals) in ‘Shiny’*. R package version 3.0.0,
 Silva, A. et al. (2019). A multivariate Poisson-log normal mixture model
 for clustering transcriptome sequencing data. BMC Bioinformatics 20.
 <https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-019-2916-0>
+
+“Function Reference Version 1.0.5.” Shiny,
+<https://shiny.rstudio.com/reference/shiny/1.0.5/>
 
 R Core Team (2022). R: A language and environment for statistical
 computing. R Foundation for Statistical Computing, Vienna, Austria. URL

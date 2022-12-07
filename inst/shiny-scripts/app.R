@@ -3,6 +3,9 @@
 # Reference: Silva, Anjali, et al.
 # "A multivariate Poisson-log normal mixture model for clustering transcriptome
 # sequencing data." BMC bioinformatics 20.1 (2019): 1-11.
+# Also used the shiny app function reference:
+# “Function Reference Version 1.0.5.” Shiny,
+# https://shiny.rstudio.com/reference/shiny/1.0.5/
 
 library(shiny)
 library(shinyalert)
@@ -85,12 +88,12 @@ ui <- fluidPage(
       # In total 5 tabs
       tabsetPanel(type = "tabs",
                   tabPanel("DNA Sequence",
-                           h3("Instructions: Click 'Run' at the bottom left side."),
+                           h3("Instructions: Input the files on the left side."),
                            h3("The DNA sequence contained in the FASTA file:"),
                            br(),
                            verbatimTextOutput("textOut")),
                   tabPanel("Base Change Details",
-                           h3("Instructions: Click 'Run' at the bottom left side."),
+                           h3("Instructions: Input the files on the left side."),
                            h3("The Base Change Details: "),
                            h5("Note: If the length of the healthy and mutated sequences
                               are different, the Base Change Table, Mutation Plot,
@@ -101,19 +104,19 @@ ui <- fluidPage(
                            br(),
                            verbatimTextOutput("mutChecker")),
                   tabPanel("Base Change Table",
-                           h3("Instructions: Click 'Run' at the bottom left side."),
+                           h3("Instructions: Input the files on the left side."),
                            h3("The Base Change Table:"),
                            h4("Var1 represents Healthy version."),
                            h4("Var2 represents Mutated version."),
                            br(),
                            tableOutput("mutTable")),
                   tabPanel("Mutation Plot",
-                           h3("Instructions: Click 'Run' at the bottom left side."),
+                           h3("Instructions: Input the files on the left side."),
                            h3("The Mutation Plot:"),
                            br(),
                            plotOutput('mutPlot')),
                   tabPanel("Mutation Comparison Plot",
-                           h3("Instructions: Click 'Run' at the bottom left side."),
+                           h3("Instructions: Input the files on the left side."),
                            h3("Mutation Comparison Plot:"),
                            br(),
                            plotOutput('mutCompPlot'))

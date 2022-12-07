@@ -11,7 +11,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' runoncoAnalysis()
+#' oncoAnalysis::runoncoAnalysis()
 #' }
 #'
 #' @author Xu Xinyi, \email{tiffanyandjojo.xu@mail.utoronto.ca}
@@ -23,6 +23,10 @@
 #'
 #' “Function Reference Version 1.0.5.” Shiny,
 #' \href{https://shiny.rstudio.com/reference/shiny/1.0.5/}{Link}
+#'
+#' Chang W, Cheng J, Allaire J, Sievert C, Schloerke B, Xie Y, Allen J, McPherson J,
+#' Dipert A, Borges B (2022). _shiny: Web Application Framework for R_. R package
+#' version 1.7.3, <https://CRAN.R-project.org/package=shiny>.
 #'
 #' @export
 #' @importFrom shiny runApp

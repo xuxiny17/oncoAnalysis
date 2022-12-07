@@ -81,7 +81,7 @@ data(package = "oncoAnalysis")
 
 * The **vignettes** provide a tutorial for the R package.
 
-* The **inst** Currently contains **CITATION**, **extdata**.
+* The **inst** Currently contains **CITATION**, **extdata** and **shiny-scripts**.
 
 <br>
 
@@ -89,6 +89,7 @@ data(package = "oncoAnalysis")
 
 ## Read in FASTA Files
 
+### Using `read.fasta()` from *seqinr* package
 We want to first read in the DNA sequence we wish to analyse, the user could use the `read.fasta` function offered by package *seqinr* package for FASTA file reading or use the `fastaReader()` function offered by *oncoAnalysis* package. 
 ```{r file input, message=FALSE}
 # library("seqinr") # Load the required R package
@@ -106,8 +107,6 @@ sampleseq1 <- sampleseq$Sample[1:(length(sampleseq$Sample))]
 samplemutseq1 <- samplemutseq$Samplemut[1:(length(samplemutseq$Samplemut))]
 ```
 
-## Obtain Mutation Details
-
 ### `fastaReader()`
 The `fastaReader()` function takes in the file name of a FATSA file, and return the Base characters contained in the input FATSA file (If the input is a valid DNA sequence (only contains ATCGatcg), otherwise it would print an error message). 
 ```{r fastaReader insertion, message=FALSE, warning=FALSE, error=FALSE}
@@ -123,6 +122,7 @@ inputdel <- system.file("extdata", "sampleDel.fasta", package = "oncoAnalysis")
 sampledelseq <- oncoAnalysis:::fastaReader(inputdel)
 sampledelseq
 ```
+## Obtain Mutation Details
 
 ### `mutChecker()`
 The package allows obtaining the mutation details by comparing the two DNA sequences (same length) we have just read in.
@@ -241,12 +241,17 @@ https://stackoverflow.com/questions/17837289/break-exit-script.
 
 Sievert, Carson. Interactive web-based data visualization with R, plotly, and shiny. CRC Press, 2020.
 
-Attali D, Edwards T (2021). _shinyalert: Easily Create Pretty Popup Messages (Modals) 
-in 'Shiny'_. R package version 3.0.0, https://CRAN.R-project.org/package=shinyalert.
+Attali D, Edwards T (2021). _shinyalert: Easily Create Pretty Popup Messages (Modals) in 'Shiny'_. R package version 3.0.0, https://CRAN.R-project.org/package=shinyalert.
+
+Chang W, Cheng J, Allaire J, Sievert C, Schloerke B, Xie Y, Allen J, McPherson J, ipert A, Borges B (2022). _shiny: Web Application Framework for R_. R package version 1.7.3, https://CRAN.R-project.org/package=shiny.
 
 Silva, A. et al. (2019). A multivariate Poisson-log normal mixture model
 for clustering transcriptome sequencing data. BMC Bioinformatics 20.
 https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-019-2916-0
+
+Johnston, Jacob, et al. “R - Shiny: Error in Cat(List(...), File, Sep, Fill, Labels, Append) : Argument 1 (Type 'List') Cannot Be Handled by 'Cat'.” Stack Overflow, 13 Mar. 2015, https://stackoverflow.com/questions/29041449/r-shiny-error-in-catlist-file-sep-fill-labels-append-argument. 
+
+“Function Reference Version 1.0.5.” Shiny, https://shiny.rstudio.com/reference/shiny/1.0.5/
 
 R Core Team (2022). R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria. URL https://www.R-project.org/.
 
