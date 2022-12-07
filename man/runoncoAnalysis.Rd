@@ -19,7 +19,7 @@ the function in runMPLNClust.R file for MPLNClust package
 }
 \examples{
 \dontrun{
-runoncoAnalysis()
+oncoAnalysis::runoncoAnalysis()
 }
 
 }
@@ -30,6 +30,10 @@ for clustering transcriptome sequencing data. \emph{BMC Bioinformatics} 20.
 
 “Function Reference Version 1.0.5.” Shiny,
 \href{https://shiny.rstudio.com/reference/shiny/1.0.5/}{Link}
+
+Chang W, Cheng J, Allaire J, Sievert C, Schloerke B, Xie Y, Allen J, McPherson J,
+Dipert A, Borges B (2022). \emph{shiny: Web Application Framework for R}. R package
+version 1.7.3, \url{https://CRAN.R-project.org/package=shiny}.
 }
 \author{
 Xu Xinyi, \email{tiffanyandjojo.xu@mail.utoronto.ca}
