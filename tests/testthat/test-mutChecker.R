@@ -5,10 +5,12 @@ test_that("mutChecker output", {
 
   inputhea <- system.file("extdata", "sample.fasta", package = "oncoAnalysis")
   inputmut <- system.file("extdata", "samplemut.fasta", package = "oncoAnalysis")
+  inputins <- system.file("extdata", "sampleIns.fasta", package = "oncoAnalysis")
 
-  # Read using read.fasta()
+  # Read using read.fasta() or fastaReader
   sampleseq <- seqinr::read.fasta(file = inputhea)
   samplemutseq <- seqinr::read.fasta(file = inputmut)
+  sampleinsseq <- oncoAnalysis::fastaReader(inputins)
 
   # Process and store data
   sampleseq1 <- sampleseq$Sample[seq_len(length(sampleseq$Sample))]
@@ -16,6 +18,8 @@ test_that("mutChecker output", {
 
   # Check the number of mutations.
   mutCheckerResults <- mutChecker(sampleseq1, samplemutseq1)
+  mutCheckerResultsins <- mutChecker(sampleseq1, sampleinsseq)
+
 
   # Check expected type
   expect_type(mutCheckerResults, "list")
@@ -28,6 +32,7 @@ test_that("mutChecker output", {
   expect_identical(trunc(mutCheckerResults$NumofGmut), 3)
   expect_type(mutCheckerResults$Mutposition, "double")
   expect_type(mutCheckerResults$MutMatrix, "double")
+  expect_type(mutCheckerResultsins, "character")
 })
 
 context("Checking for invalid user input for mutChecker")

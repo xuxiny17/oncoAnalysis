@@ -112,14 +112,14 @@ The `fastaReader()` function takes in the file name of a FATSA file, and return 
 ```{r fastaReader insertion, message=FALSE, warning=FALSE, error=FALSE}
 # We get the path of the file we want to read and use fastaReader() to read it.
 inputins <- system.file("extdata", "sampleIns.fasta", package = "oncoAnalysis")
-sampleinsseq <- oncoAnalysis:::fastaReader(inputins)
+sampleinsseq <- oncoAnalysis::fastaReader(inputins)
 sampleinsseq
 ```
 
 ```{r fastaReader deletion, message=FALSE, warning=FALSE, error=FALSE}
 # We get the path of the file we want to read and use fastaReader() to read it.
 inputdel <- system.file("extdata", "sampleDel.fasta", package = "oncoAnalysis")
-sampledelseq <- oncoAnalysis:::fastaReader(inputdel)
+sampledelseq <- oncoAnalysis::fastaReader(inputdel)
 sampledelseq
 ```
 ## Obtain Mutation Details

@@ -16,7 +16,7 @@ corresponds to suspect mutated DNA sequence.}
 }
 \value{
 Returns a list containing mutation details if the length of sequences
-are the same.
+are the same. If length is different, return messages in console.
 \itemize{
 \item The total number of mutations.
 \item The number of Base A mutated.
